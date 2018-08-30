@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base data-ice="baseUrl" href="../../../">
+  <title data-ice="title">src/clients/provisioned-service-client.js | openshift-resource-parser</title>
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
+  <script src="script/prettify/prettify.js"></script>
+  <script src="script/manual.js"></script>
+<meta name="description" content="OpenShift resource CRUDL and parser"><meta property="twitter:card" content="summary"><meta property="twitter:title" content="openshift-resource-parser"><meta property="twitter:description" content="OpenShift resource CRUDL and parser"></head>
+<body class="layout-container" data-ice="rootContainer">
+
+<header>
+  <a href="./">Home</a>
+  
+  <a href="identifiers.html">Reference</a>
+  <a href="source.html">Source</a>
+  
+  <div class="search-box">
+  <span>
+    <img src="./image/search.png">
+    <span class="search-input-edge"></span><input class="search-input"><span class="search-input-edge"></span>
+  </span>
+    <ul class="search-result"></ul>
+  </div>
+</header>
+
+<nav class="navigation" data-ice="nav"><div>
+  <ul>
+    
+  <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/main.js~OpenShiftResourceParser.html">OpenShiftResourceParser</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#clients">clients</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/clients/mock-provisioned-service-client.js~MockProvisionedServiceClient.html">MockProvisionedServiceClient</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/clients/provisioned-service-client.js~ProvisionedServiceClient.html">ProvisionedServiceClient</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#types">types</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/types/cluster-service-class.js~ClusterServiceClass.html">ClusterServiceClass</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/types/provisioned-service.js~ProvisionedService.html">ProvisionedService</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/types/service-instance.js~ServiceInstance.html">ServiceInstance</a></span></span></li>
+</ul>
+</div>
+</nav>
+
+<div class="content" data-ice="content"><h1 data-ice="title">src/clients/provisioned-service-client.js</h1>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import ClusterServiceClass from &quot;../types/cluster-service-class&quot;;
+import ServiceInstance from &quot;../types/service-instance&quot;;
+import ProvisionedService from &quot;../types/provisioned-service&quot;;
+
+/**
+ * Client for retrieving and parsing Provisioned Services.
+ */
+export default class ProvisionedServiceClient {
+  /**
+   * Construct a {@link ProvisionedServiceClient}
+   * @constructor
+   * @param {string} openshiftURL
+   */
+  constructor(openshiftURL) {
+    this.openshiftURL = openshiftURL;
+  }
+
+  /**
+   * Retrieve a {@link ProvisionedService} from a namespace, by name.
+   * @param {string} authToken The auth token for a user.
+   * @param {string} namespace The namespace to find the service in.
+   * @param {string} name The name of the service to retrieve.
+   */
+  getProvisionedService(authToken, namespace, name) {
+    return this.listProvisionedServices(authToken, namespace)
+      .then((provisionedServices) =&gt; {
+        if (!provisionedServices || (provisionedServices.length === 0)) {
+          return Promise.reject(new Error(`Provisioned service with the name ${name} not found in namespace ${namespace}`));
+        }
+        return provisionedServices.find(provisionedService =&gt; provisionedService.name === name);
+      })
+      .then((provisionedService) =&gt; {
+        if (!provisionedService) {
+          return Promise.reject(new Error(`Provisioned service with the name ${name} not found in namespace ${namespace}`));
+        }
+        return provisionedService;
+      });
+  }
+
+  /**
+   * Retrieve a list of {@link ProvisionedService} from a namespace.
+   * @param {string} authToken
+   * @param {string} namespace
+   */
+  listProvisionedServices(authToken, namespace) {
+    return Promise.all([
+      this._listClusterServiceClasses(this.openshiftURL, authToken),
+      this._listServiceInstances(this.openshiftURL, authToken, namespace)])
+      .then(([clusterServiceClasses, serviceInstances]) =&gt; {
+        if (!serviceInstances || (serviceInstances.length === 0)) {
+          return [];
+        }
+        return serviceInstances.map((serviceInstance) =&gt; {
+          const displayName = clusterServiceClasses.find(serviceClass =&gt; serviceClass.name === serviceInstance.clusterServiceClassId);
+          return new ProvisionedService(serviceInstance.name, serviceInstance.consoleURL, displayName);
+        });
+      });
+  }
+
+  /**
+   * Retrieve a list of {@link ServiceInstance} from a namespace in OpenShift.
+   * @private
+   * @param {string} openshiftURL An OpenShift URL.
+   * @param {string} authToken An auth token for a user.
+   * @param {string} namespace The namespace to list the service instances from.
+   * @returns {Promise&lt;ServiceInstance[]&gt;}
+   */
+  _listServiceInstances(openshiftURL, authToken, namespace) {
+    if (!authToken) {
+      return Promise.reject(new Error(&quot;Auth token should not be null&quot;));
+    }
+
+    const headers = new Headers({
+      &apos;Authorization&apos;: `Bearer ${authToken}`
+    });
+    return fetch(ProvisionedServiceClient._buildServiceInstanceListRoute(openshiftURL, namespace), { headers: headers })
+      .then(response =&gt; response.json())
+      .then(jsonData =&gt; jsonData.items.map(serviceInstanceJSON =&gt; ServiceInstance.fromJSON(serviceInstanceJSON)));
+  }
+
+  /**
+   * Retrieve a list of {@link ClusterServiceClass} in OpenShift.
+   * @private
+   * @param {string} openshiftURL An OpenShift URL.
+   * @param {string} authToken An auth token for a user.
+   * @returns {Promise&lt;ClusterServiceClass[]&gt;}
+   */
+  _listClusterServiceClasses(openshiftURL, authToken) {
+    if (!authToken) {
+      return Promise.reject(new Error(&quot;Auth token should not be null&quot;));
+    }
+
+    const headers = new Headers({
+      &apos;Authorization&apos;: `Bearer ${authToken}`
+    });
+    return fetch(ProvisionedServiceClient._buildClusterServiceClassListRoute(openshiftURL), { headers: headers })
+      .then(response =&gt; response.json())
+      .then(jsonData =&gt; jsonData.items.filter(serviceClassJSON =&gt; ClusterServiceClass.isValidJSON(serviceClassJSON)))
+      .then(jsonData =&gt; jsonData.map(serviceClassJSON =&gt; ClusterServiceClass.fromJSON(serviceClassJSON)));
+  }
+
+  /**
+   * Return a valid route for retrieving service instances from OpenShift.
+   * @private
+   * @param {string} openshiftURL The URL of OpenShift
+   * @param {string} namespace The namespace to retrieve the service instances from
+   */
+  static _buildServiceInstanceListRoute(openshiftURL, namespace) {
+    return `${openshiftURL}/apis/servicecatalog.k8s.io/v1beta1/namespaces/${namespace}/serviceinstances`;
+  }
+
+  /**
+   * Build a valid route for retrieving cluster service classes from OpenShift.
+   * @private
+   * @param {string} openshiftURL The URL of OpenShift
+   */
+  static _buildClusterServiceClassListRoute(openshiftURL) {
+    return `${openshiftURL}/apis/servicecatalog.k8s.io/v1beta1/clusterserviceclasses`;
+  }
+}
+</code></pre>
+
+</div>
+
+<footer class="footer">
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(1.1.0)</span><img src="./image/esdoc-logo-mini-black.png"></a>
+</footer>
+
+<script src="script/search_index.js"></script>
+<script src="script/search.js"></script>
+<script src="script/pretty-print.js"></script>
+<script src="script/inherited-summary.js"></script>
+<script src="script/test-summary.js"></script>
+<script src="script/inner-link.js"></script>
+<script src="script/patch-for-local.js"></script>
+</body>
+</html>

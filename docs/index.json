@@ -1,0 +1,1669 @@
+[
+  {
+    "__docId__": 1,
+    "kind": "external",
+    "name": "Infinity",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Infinity",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Infinity",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 2,
+    "kind": "external",
+    "name": "NaN",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/NaN",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~NaN",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 3,
+    "kind": "external",
+    "name": "undefined",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~undefined",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 4,
+    "kind": "external",
+    "name": "null",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/null",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~null",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 5,
+    "kind": "external",
+    "name": "Object",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Object",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 6,
+    "kind": "external",
+    "name": "object",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~object",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 7,
+    "kind": "external",
+    "name": "Function",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Function",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 8,
+    "kind": "external",
+    "name": "function",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~function",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 9,
+    "kind": "external",
+    "name": "Boolean",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Boolean",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 10,
+    "kind": "external",
+    "name": "boolean",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~boolean",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 11,
+    "kind": "external",
+    "name": "Symbol",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Symbol",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 12,
+    "kind": "external",
+    "name": "Error",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Error",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 13,
+    "kind": "external",
+    "name": "EvalError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/EvalError",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~EvalError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 14,
+    "kind": "external",
+    "name": "InternalError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/InternalError",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~InternalError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 15,
+    "kind": "external",
+    "name": "RangeError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RangeError",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~RangeError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 16,
+    "kind": "external",
+    "name": "ReferenceError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ReferenceError",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~ReferenceError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 17,
+    "kind": "external",
+    "name": "SyntaxError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SyntaxError",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~SyntaxError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 18,
+    "kind": "external",
+    "name": "TypeError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypeError",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~TypeError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 19,
+    "kind": "external",
+    "name": "URIError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/URIError",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~URIError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 20,
+    "kind": "external",
+    "name": "Number",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Number",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 21,
+    "kind": "external",
+    "name": "number",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~number",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 22,
+    "kind": "external",
+    "name": "Date",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Date",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 23,
+    "kind": "external",
+    "name": "String",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~String",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 24,
+    "kind": "external",
+    "name": "string",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~string",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 25,
+    "kind": "external",
+    "name": "RegExp",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~RegExp",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 26,
+    "kind": "external",
+    "name": "Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 27,
+    "kind": "external",
+    "name": "Int8Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Int8Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Int8Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 28,
+    "kind": "external",
+    "name": "Uint8Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Uint8Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 29,
+    "kind": "external",
+    "name": "Uint8ClampedArray",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8ClampedArray",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Uint8ClampedArray",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 30,
+    "kind": "external",
+    "name": "Int16Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Int16Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Int16Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 31,
+    "kind": "external",
+    "name": "Uint16Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint16Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Uint16Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 32,
+    "kind": "external",
+    "name": "Int32Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Int32Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Int32Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 33,
+    "kind": "external",
+    "name": "Uint32Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint32Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Uint32Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 34,
+    "kind": "external",
+    "name": "Float32Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Float32Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Float32Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 35,
+    "kind": "external",
+    "name": "Float64Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Float64Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Float64Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 36,
+    "kind": "external",
+    "name": "Map",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Map",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 37,
+    "kind": "external",
+    "name": "Set",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Set",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 38,
+    "kind": "external",
+    "name": "WeakMap",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakMap",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~WeakMap",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 39,
+    "kind": "external",
+    "name": "WeakSet",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakSet",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~WeakSet",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 40,
+    "kind": "external",
+    "name": "ArrayBuffer",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~ArrayBuffer",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 41,
+    "kind": "external",
+    "name": "DataView",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~DataView",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 42,
+    "kind": "external",
+    "name": "JSON",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~JSON",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 43,
+    "kind": "external",
+    "name": "Promise",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Promise",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 44,
+    "kind": "external",
+    "name": "Generator",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Generator",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Generator",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 45,
+    "kind": "external",
+    "name": "GeneratorFunction",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/GeneratorFunction",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~GeneratorFunction",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 46,
+    "kind": "external",
+    "name": "Reflect",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Reflect",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Reflect",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 47,
+    "kind": "external",
+    "name": "Proxy",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Proxy",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 48,
+    "kind": "file",
+    "name": "src/clients/mock-provisioned-service-client.js",
+    "content": "import ProvisionedService from \"../types/provisioned-service\";\n\n/**\n * Mock client for retrieving and parsing Provisioned Services.\n */\nexport default class MockProvisionedServiceClient {\n  /**\n   * Retrieve a {@link ProvisionedService} from a namespace, by name.\n   * @returns {ProvisionedService}\n   */\n  static getProvisionedService() {\n    const identifier = MockProvisionedServiceClient._randomIdentifier();\n    return new ProvisionedService(`mock-service-${identifier}`, `https://mock-service-${identifier}.com/`, `mock-service-${identifier}-name`);\n  }\n\n  /**\n   * Retrieve a randomly named {@link ProvisionedService}\n   * @returns {ProvisionedService[]}\n   */\n  static listProvisionedServices() {\n    return [this.getProvisionedService(), this.getProvisionedService(), this.getProvisionedService];\n  }\n\n  /**\n   * Generate a random identifier for the client.\n   * @private\n   * @returns {number}\n   */\n  static _randomIdentifier() {\n    return Math.floor(Math.random() * (9999 - 1000 + 1)) + 1000;\n  }\n}\n",
+    "static": true,
+    "longname": "/Users/aidenkeating/work/openshift-resource-parser/src/clients/mock-provisioned-service-client.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 49,
+    "kind": "class",
+    "name": "MockProvisionedServiceClient",
+    "memberof": "src/clients/mock-provisioned-service-client.js",
+    "static": true,
+    "longname": "src/clients/mock-provisioned-service-client.js~MockProvisionedServiceClient",
+    "access": "public",
+    "export": true,
+    "importPath": "openshift-resource-parser/src/clients/mock-provisioned-service-client.js",
+    "importStyle": "MockProvisionedServiceClient",
+    "description": "Mock client for retrieving and parsing Provisioned Services.",
+    "lineNumber": 6,
+    "interface": false
+  },
+  {
+    "__docId__": 50,
+    "kind": "method",
+    "name": "getProvisionedService",
+    "memberof": "src/clients/mock-provisioned-service-client.js~MockProvisionedServiceClient",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/clients/mock-provisioned-service-client.js~MockProvisionedServiceClient.getProvisionedService",
+    "access": "public",
+    "description": "Retrieve a {@link ProvisionedService} from a namespace, by name.",
+    "lineNumber": 11,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{ProvisionedService}"
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "ProvisionedService"
+      ],
+      "spread": false,
+      "description": ""
+    },
+    "params": []
+  },
+  {
+    "__docId__": 51,
+    "kind": "method",
+    "name": "listProvisionedServices",
+    "memberof": "src/clients/mock-provisioned-service-client.js~MockProvisionedServiceClient",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/clients/mock-provisioned-service-client.js~MockProvisionedServiceClient.listProvisionedServices",
+    "access": "public",
+    "description": "Retrieve a randomly named {@link ProvisionedService}",
+    "lineNumber": 20,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{ProvisionedService[]}"
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "ProvisionedService[]"
+      ],
+      "spread": false,
+      "description": ""
+    },
+    "params": []
+  },
+  {
+    "__docId__": 52,
+    "kind": "method",
+    "name": "_randomIdentifier",
+    "memberof": "src/clients/mock-provisioned-service-client.js~MockProvisionedServiceClient",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/clients/mock-provisioned-service-client.js~MockProvisionedServiceClient._randomIdentifier",
+    "access": "private",
+    "description": "Generate a random identifier for the client.",
+    "lineNumber": 29,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{number}"
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "number"
+      ],
+      "spread": false,
+      "description": ""
+    },
+    "params": []
+  },
+  {
+    "__docId__": 53,
+    "kind": "file",
+    "name": "src/clients/provisioned-service-client.js",
+    "content": "import ClusterServiceClass from \"../types/cluster-service-class\";\nimport ServiceInstance from \"../types/service-instance\";\nimport ProvisionedService from \"../types/provisioned-service\";\n\n/**\n * Client for retrieving and parsing Provisioned Services.\n */\nexport default class ProvisionedServiceClient {\n  /**\n   * Construct a {@link ProvisionedServiceClient}\n   * @constructor\n   * @param {string} openshiftURL\n   */\n  constructor(openshiftURL) {\n    this.openshiftURL = openshiftURL;\n  }\n\n  /**\n   * Retrieve a {@link ProvisionedService} from a namespace, by name.\n   * @param {string} authToken The auth token for a user.\n   * @param {string} namespace The namespace to find the service in.\n   * @param {string} name The name of the service to retrieve.\n   */\n  getProvisionedService(authToken, namespace, name) {\n    return this.listProvisionedServices(authToken, namespace)\n      .then((provisionedServices) => {\n        if (!provisionedServices || (provisionedServices.length === 0)) {\n          return Promise.reject(new Error(`Provisioned service with the name ${name} not found in namespace ${namespace}`));\n        }\n        return provisionedServices.find(provisionedService => provisionedService.name === name);\n      })\n      .then((provisionedService) => {\n        if (!provisionedService) {\n          return Promise.reject(new Error(`Provisioned service with the name ${name} not found in namespace ${namespace}`));\n        }\n        return provisionedService;\n      });\n  }\n\n  /**\n   * Retrieve a list of {@link ProvisionedService} from a namespace.\n   * @param {string} authToken\n   * @param {string} namespace\n   */\n  listProvisionedServices(authToken, namespace) {\n    return Promise.all([\n      this._listClusterServiceClasses(this.openshiftURL, authToken),\n      this._listServiceInstances(this.openshiftURL, authToken, namespace)])\n      .then(([clusterServiceClasses, serviceInstances]) => {\n        if (!serviceInstances || (serviceInstances.length === 0)) {\n          return [];\n        }\n        return serviceInstances.map((serviceInstance) => {\n          const displayName = clusterServiceClasses.find(serviceClass => serviceClass.name === serviceInstance.clusterServiceClassId);\n          return new ProvisionedService(serviceInstance.name, serviceInstance.consoleURL, displayName);\n        });\n      });\n  }\n\n  /**\n   * Retrieve a list of {@link ServiceInstance} from a namespace in OpenShift.\n   * @private\n   * @param {string} openshiftURL An OpenShift URL.\n   * @param {string} authToken An auth token for a user.\n   * @param {string} namespace The namespace to list the service instances from.\n   * @returns {Promise<ServiceInstance[]>}\n   */\n  _listServiceInstances(openshiftURL, authToken, namespace) {\n    if (!authToken) {\n      return Promise.reject(new Error(\"Auth token should not be null\"));\n    }\n\n    const headers = new Headers({\n      'Authorization': `Bearer ${authToken}`\n    });\n    return fetch(ProvisionedServiceClient._buildServiceInstanceListRoute(openshiftURL, namespace), { headers: headers })\n      .then(response => response.json())\n      .then(jsonData => jsonData.items.map(serviceInstanceJSON => ServiceInstance.fromJSON(serviceInstanceJSON)));\n  }\n\n  /**\n   * Retrieve a list of {@link ClusterServiceClass} in OpenShift.\n   * @private\n   * @param {string} openshiftURL An OpenShift URL.\n   * @param {string} authToken An auth token for a user.\n   * @returns {Promise<ClusterServiceClass[]>}\n   */\n  _listClusterServiceClasses(openshiftURL, authToken) {\n    if (!authToken) {\n      return Promise.reject(new Error(\"Auth token should not be null\"));\n    }\n\n    const headers = new Headers({\n      'Authorization': `Bearer ${authToken}`\n    });\n    return fetch(ProvisionedServiceClient._buildClusterServiceClassListRoute(openshiftURL), { headers: headers })\n      .then(response => response.json())\n      .then(jsonData => jsonData.items.filter(serviceClassJSON => ClusterServiceClass.isValidJSON(serviceClassJSON)))\n      .then(jsonData => jsonData.map(serviceClassJSON => ClusterServiceClass.fromJSON(serviceClassJSON)));\n  }\n\n  /**\n   * Return a valid route for retrieving service instances from OpenShift.\n   * @private\n   * @param {string} openshiftURL The URL of OpenShift\n   * @param {string} namespace The namespace to retrieve the service instances from\n   */\n  static _buildServiceInstanceListRoute(openshiftURL, namespace) {\n    return `${openshiftURL}/apis/servicecatalog.k8s.io/v1beta1/namespaces/${namespace}/serviceinstances`;\n  }\n\n  /**\n   * Build a valid route for retrieving cluster service classes from OpenShift.\n   * @private\n   * @param {string} openshiftURL The URL of OpenShift\n   */\n  static _buildClusterServiceClassListRoute(openshiftURL) {\n    return `${openshiftURL}/apis/servicecatalog.k8s.io/v1beta1/clusterserviceclasses`;\n  }\n}\n",
+    "static": true,
+    "longname": "/Users/aidenkeating/work/openshift-resource-parser/src/clients/provisioned-service-client.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 54,
+    "kind": "class",
+    "name": "ProvisionedServiceClient",
+    "memberof": "src/clients/provisioned-service-client.js",
+    "static": true,
+    "longname": "src/clients/provisioned-service-client.js~ProvisionedServiceClient",
+    "access": "public",
+    "export": true,
+    "importPath": "openshift-resource-parser/src/clients/provisioned-service-client.js",
+    "importStyle": "ProvisionedServiceClient",
+    "description": "Client for retrieving and parsing Provisioned Services.",
+    "lineNumber": 8,
+    "interface": false
+  },
+  {
+    "__docId__": 55,
+    "kind": "constructor",
+    "name": "constructor",
+    "memberof": "src/clients/provisioned-service-client.js~ProvisionedServiceClient",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/clients/provisioned-service-client.js~ProvisionedServiceClient#constructor",
+    "access": "public",
+    "description": "Construct a {@link ProvisionedServiceClient}",
+    "lineNumber": 14,
+    "unknown": [
+      {
+        "tagName": "@constructor",
+        "tagValue": ""
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "openshiftURL",
+        "description": ""
+      }
+    ]
+  },
+  {
+    "__docId__": 56,
+    "kind": "member",
+    "name": "openshiftURL",
+    "memberof": "src/clients/provisioned-service-client.js~ProvisionedServiceClient",
+    "static": false,
+    "longname": "src/clients/provisioned-service-client.js~ProvisionedServiceClient#openshiftURL",
+    "access": "public",
+    "description": null,
+    "lineNumber": 15,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 57,
+    "kind": "method",
+    "name": "getProvisionedService",
+    "memberof": "src/clients/provisioned-service-client.js~ProvisionedServiceClient",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/clients/provisioned-service-client.js~ProvisionedServiceClient#getProvisionedService",
+    "access": "public",
+    "description": "Retrieve a {@link ProvisionedService} from a namespace, by name.",
+    "lineNumber": 24,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "authToken",
+        "description": "The auth token for a user."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "namespace",
+        "description": "The namespace to find the service in."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "name",
+        "description": "The name of the service to retrieve."
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 58,
+    "kind": "method",
+    "name": "listProvisionedServices",
+    "memberof": "src/clients/provisioned-service-client.js~ProvisionedServiceClient",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/clients/provisioned-service-client.js~ProvisionedServiceClient#listProvisionedServices",
+    "access": "public",
+    "description": "Retrieve a list of {@link ProvisionedService} from a namespace.",
+    "lineNumber": 45,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "authToken",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "namespace",
+        "description": ""
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 59,
+    "kind": "method",
+    "name": "_listServiceInstances",
+    "memberof": "src/clients/provisioned-service-client.js~ProvisionedServiceClient",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/clients/provisioned-service-client.js~ProvisionedServiceClient#_listServiceInstances",
+    "access": "private",
+    "description": "Retrieve a list of {@link ServiceInstance} from a namespace in OpenShift.",
+    "lineNumber": 68,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{Promise<ServiceInstance[]>}"
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "openshiftURL",
+        "description": "An OpenShift URL."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "authToken",
+        "description": "An auth token for a user."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "namespace",
+        "description": "The namespace to list the service instances from."
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Promise<ServiceInstance[]>"
+      ],
+      "spread": false,
+      "description": ""
+    }
+  },
+  {
+    "__docId__": 60,
+    "kind": "method",
+    "name": "_listClusterServiceClasses",
+    "memberof": "src/clients/provisioned-service-client.js~ProvisionedServiceClient",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/clients/provisioned-service-client.js~ProvisionedServiceClient#_listClusterServiceClasses",
+    "access": "private",
+    "description": "Retrieve a list of {@link ClusterServiceClass} in OpenShift.",
+    "lineNumber": 88,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{Promise<ClusterServiceClass[]>}"
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "openshiftURL",
+        "description": "An OpenShift URL."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "authToken",
+        "description": "An auth token for a user."
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Promise<ClusterServiceClass[]>"
+      ],
+      "spread": false,
+      "description": ""
+    }
+  },
+  {
+    "__docId__": 61,
+    "kind": "method",
+    "name": "_buildServiceInstanceListRoute",
+    "memberof": "src/clients/provisioned-service-client.js~ProvisionedServiceClient",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/clients/provisioned-service-client.js~ProvisionedServiceClient._buildServiceInstanceListRoute",
+    "access": "private",
+    "description": "Return a valid route for retrieving service instances from OpenShift.",
+    "lineNumber": 108,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "openshiftURL",
+        "description": "The URL of OpenShift"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "namespace",
+        "description": "The namespace to retrieve the service instances from"
+      }
+    ],
+    "return": {
+      "types": [
+        "string"
+      ]
+    }
+  },
+  {
+    "__docId__": 62,
+    "kind": "method",
+    "name": "_buildClusterServiceClassListRoute",
+    "memberof": "src/clients/provisioned-service-client.js~ProvisionedServiceClient",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/clients/provisioned-service-client.js~ProvisionedServiceClient._buildClusterServiceClassListRoute",
+    "access": "private",
+    "description": "Build a valid route for retrieving cluster service classes from OpenShift.",
+    "lineNumber": 117,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "openshiftURL",
+        "description": "The URL of OpenShift"
+      }
+    ],
+    "return": {
+      "types": [
+        "string"
+      ]
+    }
+  },
+  {
+    "__docId__": 63,
+    "kind": "file",
+    "name": "src/main.js",
+    "content": "import ProvisionedService from \"./types/provisioned-service\";\nimport ProvisionedServiceClient from \"./clients/provisioned-service-client\";\nimport MockProvisionedServiceClient from \"./clients/mock-provisioned-service-client\";\n\n/**\n * Provides a set of functions for retrieving various OpenShift resources and\n * parsing them into a specific format.\n */\nexport default class OpenShiftResourceParser {\n  /**\n   * Construct a new {@link OpenShiftResourceParser}\n   * @param {Object} config Configuration for the parser.\n   * @param {string} config.openshiftURL The URL of OpenShift.\n   * @param {boolean} config.mockData Whether the parser should use mock data or not.\n   */\n  constructor(config) {\n    this.config = config;\n    this.provisionedServiceClient = new ProvisionedServiceClient(this.config.openshiftURL);\n  }\n\n  /**\n   * Get a ProvisionedService from a specified namespace, by name.\n   * @param {string} authToken An auth token for a user.\n   * @param {string} namespace The namespace to find the service in.\n   * @param {string} serviceName The name of the service to retrieve.\n   * @returns {Promise<ProvisionedService>}\n   */\n  getProvisionedMWService(authToken, namespace, serviceName) {\n    if (this.config.mockData) {\n      return MockProvisionedServiceClient.getProvisionedService();\n    }\n    return this.provisionedServiceClient.getProvisionedService(authToken, namespace, serviceName);\n  }\n\n  /**\n   * Retrieve a list of provisioned services in a namespace.\n   * @param {string} authToken\n   * @param {string} namespace\n   * @returns {Promise<ProvisionedService>}\n   */\n  listProvisionedMWServices(authToken, namespace) {\n    if (this.config.mockData) {\n      return MockProvisionedServiceClient.listProvisionedServices();\n    }\n    return this.provisionedServiceClient.listProvisionedServices(authToken, namespace);\n  }\n}\n",
+    "static": true,
+    "longname": "/Users/aidenkeating/work/openshift-resource-parser/src/main.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 64,
+    "kind": "class",
+    "name": "OpenShiftResourceParser",
+    "memberof": "src/main.js",
+    "static": true,
+    "longname": "src/main.js~OpenShiftResourceParser",
+    "access": "public",
+    "export": true,
+    "importPath": "openshift-resource-parser",
+    "importStyle": "OpenShiftResourceParser",
+    "description": "Provides a set of functions for retrieving various OpenShift resources and\nparsing them into a specific format.",
+    "lineNumber": 9,
+    "interface": false
+  },
+  {
+    "__docId__": 65,
+    "kind": "constructor",
+    "name": "constructor",
+    "memberof": "src/main.js~OpenShiftResourceParser",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/main.js~OpenShiftResourceParser#constructor",
+    "access": "public",
+    "description": "Construct a new {@link OpenShiftResourceParser}",
+    "lineNumber": 16,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "config",
+        "description": "Configuration for the parser."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "config.openshiftURL",
+        "description": "The URL of OpenShift."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "boolean"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "config.mockData",
+        "description": "Whether the parser should use mock data or not."
+      }
+    ]
+  },
+  {
+    "__docId__": 66,
+    "kind": "member",
+    "name": "config",
+    "memberof": "src/main.js~OpenShiftResourceParser",
+    "static": false,
+    "longname": "src/main.js~OpenShiftResourceParser#config",
+    "access": "public",
+    "description": null,
+    "lineNumber": 17,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 67,
+    "kind": "member",
+    "name": "provisionedServiceClient",
+    "memberof": "src/main.js~OpenShiftResourceParser",
+    "static": false,
+    "longname": "src/main.js~OpenShiftResourceParser#provisionedServiceClient",
+    "access": "public",
+    "description": null,
+    "lineNumber": 18,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 68,
+    "kind": "method",
+    "name": "getProvisionedMWService",
+    "memberof": "src/main.js~OpenShiftResourceParser",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/main.js~OpenShiftResourceParser#getProvisionedMWService",
+    "access": "public",
+    "description": "Get a ProvisionedService from a specified namespace, by name.",
+    "lineNumber": 28,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{Promise<ProvisionedService>}"
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "authToken",
+        "description": "An auth token for a user."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "namespace",
+        "description": "The namespace to find the service in."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "serviceName",
+        "description": "The name of the service to retrieve."
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Promise<ProvisionedService>"
+      ],
+      "spread": false,
+      "description": ""
+    }
+  },
+  {
+    "__docId__": 69,
+    "kind": "method",
+    "name": "listProvisionedMWServices",
+    "memberof": "src/main.js~OpenShiftResourceParser",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/main.js~OpenShiftResourceParser#listProvisionedMWServices",
+    "access": "public",
+    "description": "Retrieve a list of provisioned services in a namespace.",
+    "lineNumber": 41,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{Promise<ProvisionedService>}"
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "authToken",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "namespace",
+        "description": ""
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Promise<ProvisionedService>"
+      ],
+      "spread": false,
+      "description": ""
+    }
+  },
+  {
+    "__docId__": 70,
+    "kind": "file",
+    "name": "src/types/cluster-service-class.js",
+    "content": "export default class ClusterServiceClass {\n  /**\n   * Construct a new {@link ClusterServiceClass}\n   * @param {string} name The identifying name of the cluster service class\n   * @param {string} displayName The human-friendly name of the cluster service class\n   */\n  constructor(name, displayName) {\n    this.name = name;\n    this.displayName = displayName;\n  }\n\n  /**\n   * Return whether the provided JSON data is parsable by @see fromJSON \n   * This returning false does not mean the actual object is invalid in OpenShift.\n   * @param {Object} jsonData The JSON object to check\n   * @returns {boolean} \n   */\n  static isValidJSON(jsonData) {\n    return (jsonData && jsonData.metadata && jsonData.metadata.name &&\n      jsonData.spec && jsonData.spec.externalMetadata && jsonData.spec.externalMetadata.displayName)\n  }\n\n  /**\n   * Create a new {@link ClusterServiceClass} from a provided JSON object.\n   * @param {Object} jsonData The JSON object to parse\n   * @returns {ClusterServiceClass}\n   */\n  static fromJSON(jsonData) {\n    return new ClusterServiceClass(jsonData.metadata.name, jsonData.spec.externalMetadata.displayName);\n  }\n}\n",
+    "static": true,
+    "longname": "/Users/aidenkeating/work/openshift-resource-parser/src/types/cluster-service-class.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 71,
+    "kind": "class",
+    "name": "ClusterServiceClass",
+    "memberof": "src/types/cluster-service-class.js",
+    "static": true,
+    "longname": "src/types/cluster-service-class.js~ClusterServiceClass",
+    "access": "public",
+    "export": true,
+    "importPath": "openshift-resource-parser/src/types/cluster-service-class.js",
+    "importStyle": "ClusterServiceClass",
+    "description": null,
+    "lineNumber": 1,
+    "undocument": true,
+    "interface": false
+  },
+  {
+    "__docId__": 72,
+    "kind": "constructor",
+    "name": "constructor",
+    "memberof": "src/types/cluster-service-class.js~ClusterServiceClass",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/types/cluster-service-class.js~ClusterServiceClass#constructor",
+    "access": "public",
+    "description": "Construct a new {@link ClusterServiceClass}",
+    "lineNumber": 7,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "name",
+        "description": "The identifying name of the cluster service class"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "displayName",
+        "description": "The human-friendly name of the cluster service class"
+      }
+    ]
+  },
+  {
+    "__docId__": 73,
+    "kind": "member",
+    "name": "name",
+    "memberof": "src/types/cluster-service-class.js~ClusterServiceClass",
+    "static": false,
+    "longname": "src/types/cluster-service-class.js~ClusterServiceClass#name",
+    "access": "public",
+    "description": null,
+    "lineNumber": 8,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 74,
+    "kind": "member",
+    "name": "displayName",
+    "memberof": "src/types/cluster-service-class.js~ClusterServiceClass",
+    "static": false,
+    "longname": "src/types/cluster-service-class.js~ClusterServiceClass#displayName",
+    "access": "public",
+    "description": null,
+    "lineNumber": 9,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 75,
+    "kind": "method",
+    "name": "isValidJSON",
+    "memberof": "src/types/cluster-service-class.js~ClusterServiceClass",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/types/cluster-service-class.js~ClusterServiceClass.isValidJSON",
+    "access": "public",
+    "description": "Return whether the provided JSON data is parsable by @see fromJSON \nThis returning false does not mean the actual object is invalid in OpenShift.",
+    "lineNumber": 18,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{boolean} "
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "jsonData",
+        "description": "The JSON object to check"
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "boolean"
+      ],
+      "spread": false,
+      "description": ""
+    }
+  },
+  {
+    "__docId__": 76,
+    "kind": "method",
+    "name": "fromJSON",
+    "memberof": "src/types/cluster-service-class.js~ClusterServiceClass",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/types/cluster-service-class.js~ClusterServiceClass.fromJSON",
+    "access": "public",
+    "description": "Create a new {@link ClusterServiceClass} from a provided JSON object.",
+    "lineNumber": 28,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{ClusterServiceClass}"
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "jsonData",
+        "description": "The JSON object to parse"
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "ClusterServiceClass"
+      ],
+      "spread": false,
+      "description": ""
+    }
+  },
+  {
+    "__docId__": 77,
+    "kind": "file",
+    "name": "src/types/provisioned-service.js",
+    "content": "export default class ProvisionedService {\n  /**\n   * Construct a new {@link ProvisionedService}.\n   * @constructor\n   * @param {string} name The name of the service\n   * @param {string} consoleURL The dashboard URL of the service\n   * @param {ClusterServiceClass} service The cluster service class\n   */\n  constructor(name, consoleURL, service) {\n    this.name = name;\n    this.consoleURL = consoleURL;\n    this.service = service;\n  }\n}\n",
+    "static": true,
+    "longname": "/Users/aidenkeating/work/openshift-resource-parser/src/types/provisioned-service.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 78,
+    "kind": "class",
+    "name": "ProvisionedService",
+    "memberof": "src/types/provisioned-service.js",
+    "static": true,
+    "longname": "src/types/provisioned-service.js~ProvisionedService",
+    "access": "public",
+    "export": true,
+    "importPath": "openshift-resource-parser/src/types/provisioned-service.js",
+    "importStyle": "ProvisionedService",
+    "description": null,
+    "lineNumber": 1,
+    "undocument": true,
+    "interface": false
+  },
+  {
+    "__docId__": 79,
+    "kind": "constructor",
+    "name": "constructor",
+    "memberof": "src/types/provisioned-service.js~ProvisionedService",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/types/provisioned-service.js~ProvisionedService#constructor",
+    "access": "public",
+    "description": "Construct a new {@link ProvisionedService}.",
+    "lineNumber": 9,
+    "unknown": [
+      {
+        "tagName": "@constructor",
+        "tagValue": ""
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "name",
+        "description": "The name of the service"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "consoleURL",
+        "description": "The dashboard URL of the service"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "ClusterServiceClass"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "service",
+        "description": "The cluster service class"
+      }
+    ]
+  },
+  {
+    "__docId__": 80,
+    "kind": "member",
+    "name": "name",
+    "memberof": "src/types/provisioned-service.js~ProvisionedService",
+    "static": false,
+    "longname": "src/types/provisioned-service.js~ProvisionedService#name",
+    "access": "public",
+    "description": null,
+    "lineNumber": 10,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 81,
+    "kind": "member",
+    "name": "consoleURL",
+    "memberof": "src/types/provisioned-service.js~ProvisionedService",
+    "static": false,
+    "longname": "src/types/provisioned-service.js~ProvisionedService#consoleURL",
+    "access": "public",
+    "description": null,
+    "lineNumber": 11,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 82,
+    "kind": "member",
+    "name": "service",
+    "memberof": "src/types/provisioned-service.js~ProvisionedService",
+    "static": false,
+    "longname": "src/types/provisioned-service.js~ProvisionedService#service",
+    "access": "public",
+    "description": null,
+    "lineNumber": 12,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 83,
+    "kind": "file",
+    "name": "src/types/service-instance.js",
+    "content": "export default class ServiceInstance {\n  constructor(name, consoleURL, clusterServiceClassId) {\n    this.name = name;\n    this.consoleURL = consoleURL;\n    this.clusterServiceClassId = clusterServiceClassId;\n  }\n\n  static fromJSON(jsonData) {\n    const { name } = jsonData.metadata;\n    const consoleURL = jsonData.status.dashboardURL;\n    const clusterServiceClassId = jsonData.spec.clusterServiceClassRef.name;\n\n    return new ServiceInstance(name, consoleURL, clusterServiceClassId);\n  }\n}\n",
+    "static": true,
+    "longname": "/Users/aidenkeating/work/openshift-resource-parser/src/types/service-instance.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 84,
+    "kind": "class",
+    "name": "ServiceInstance",
+    "memberof": "src/types/service-instance.js",
+    "static": true,
+    "longname": "src/types/service-instance.js~ServiceInstance",
+    "access": "public",
+    "export": true,
+    "importPath": "openshift-resource-parser/src/types/service-instance.js",
+    "importStyle": "ServiceInstance",
+    "description": null,
+    "lineNumber": 1,
+    "undocument": true,
+    "interface": false
+  },
+  {
+    "__docId__": 85,
+    "kind": "constructor",
+    "name": "constructor",
+    "memberof": "src/types/service-instance.js~ServiceInstance",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/types/service-instance.js~ServiceInstance#constructor",
+    "access": "public",
+    "description": null,
+    "lineNumber": 2,
+    "undocument": true
+  },
+  {
+    "__docId__": 86,
+    "kind": "member",
+    "name": "name",
+    "memberof": "src/types/service-instance.js~ServiceInstance",
+    "static": false,
+    "longname": "src/types/service-instance.js~ServiceInstance#name",
+    "access": "public",
+    "description": null,
+    "lineNumber": 3,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 87,
+    "kind": "member",
+    "name": "consoleURL",
+    "memberof": "src/types/service-instance.js~ServiceInstance",
+    "static": false,
+    "longname": "src/types/service-instance.js~ServiceInstance#consoleURL",
+    "access": "public",
+    "description": null,
+    "lineNumber": 4,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 88,
+    "kind": "member",
+    "name": "clusterServiceClassId",
+    "memberof": "src/types/service-instance.js~ServiceInstance",
+    "static": false,
+    "longname": "src/types/service-instance.js~ServiceInstance#clusterServiceClassId",
+    "access": "public",
+    "description": null,
+    "lineNumber": 5,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 89,
+    "kind": "method",
+    "name": "fromJSON",
+    "memberof": "src/types/service-instance.js~ServiceInstance",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/types/service-instance.js~ServiceInstance.fromJSON",
+    "access": "public",
+    "description": null,
+    "lineNumber": 8,
+    "undocument": true,
+    "params": [
+      {
+        "name": "jsonData",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "kind": "index",
+    "content": "# OpenShift Resource Parser\n\nA library for retrieving and parsing various OpenShift resources.\n\n* Documentation - See the `docs/` directory.\n* Testing - Run `yarn run test`.\n",
+    "longname": "/Users/aidenkeating/work/openshift-resource-parser/README.md",
+    "name": "./README.md",
+    "static": true,
+    "access": "public"
+  },
+  {
+    "kind": "packageJSON",
+    "content": "{\n  \"name\": \"openshift-resource-parser\",\n  \"version\": \"1.0.0\",\n  \"description\": \"OpenShift resource CRUDL and parser\",\n  \"main\": \"./src/main.js\",\n  \"scripts\": {\n    \"test\": \"./node_modules/jest/bin/jest.js\",\n    \"lint\": \"./node_modules/.bin/eslint src/**\",\n    \"docs\": \"./node_modules/.bin/esdoc\"\n  },\n  \"jest\": {\n    \"automock\": false,\n    \"setupFiles\": [\n      \"./test/setup-jest.js\"\n    ]\n  },\n  \"keywords\": [\n    \"integreatly\",\n    \"openshift\"\n  ],\n  \"author\": \"Red Hat\",\n  \"license\": \"Apache-2.0\",\n  \"devDependencies\": {\n    \"babel-core\": \"^6.26.3\",\n    \"babel-jest\": \"^23.4.2\",\n    \"babel-plugin-transform-runtime\": \"^6.23.0\",\n    \"babel-preset-env\": \"^1.7.0\",\n    \"esdoc\": \"^1.1.0\",\n    \"esdoc-standard-plugin\": \"^1.0.0\",\n    \"eslint\": \"^5.4.0\",\n    \"eslint-config-airbnb-base\": \"^13.1.0\",\n    \"eslint-plugin-import\": \"^2.14.0\",\n    \"jest\": \"^23.5.0\",\n    \"jest-fetch-mock\": \"^1.6.5\"\n  }\n}\n",
+    "longname": "/Users/aidenkeating/work/openshift-resource-parser/package.json",
+    "name": "package.json",
+    "static": true,
+    "access": "public"
+  }
+]

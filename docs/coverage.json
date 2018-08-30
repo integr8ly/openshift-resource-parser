@@ -1,0 +1,58 @@
+{
+  "coverage": "55.55%",
+  "expectCount": 36,
+  "actualCount": 20,
+  "files": {
+    "src/clients/mock-provisioned-service-client.js": {
+      "expectCount": 4,
+      "actualCount": 4,
+      "undocumentLines": []
+    },
+    "src/clients/provisioned-service-client.js": {
+      "expectCount": 9,
+      "actualCount": 8,
+      "undocumentLines": [
+        15
+      ]
+    },
+    "src/main.js": {
+      "expectCount": 6,
+      "actualCount": 4,
+      "undocumentLines": [
+        17,
+        18
+      ]
+    },
+    "src/types/cluster-service-class.js": {
+      "expectCount": 6,
+      "actualCount": 3,
+      "undocumentLines": [
+        1,
+        8,
+        9
+      ]
+    },
+    "src/types/provisioned-service.js": {
+      "expectCount": 5,
+      "actualCount": 1,
+      "undocumentLines": [
+        1,
+        10,
+        11,
+        12
+      ]
+    },
+    "src/types/service-instance.js": {
+      "expectCount": 6,
+      "actualCount": 0,
+      "undocumentLines": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        8
+      ]
+    }
+  }
+}
