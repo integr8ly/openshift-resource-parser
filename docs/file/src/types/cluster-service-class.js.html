@@ -52,14 +52,14 @@
   }
 
   /**
-   * Return whether the provided JSON data is parsable by @see fromJSON 
+   * Return whether the provided JSON data is parsable by @see fromJSON
    * This returning false does not mean the actual object is invalid in OpenShift.
    * @param {Object} jsonData The JSON object to check
-   * @returns {boolean} 
+   * @returns {boolean}
    */
   static isValidJSON(jsonData) {
-    return (jsonData &amp;&amp; jsonData.metadata &amp;&amp; jsonData.metadata.name &amp;&amp;
-      jsonData.spec &amp;&amp; jsonData.spec.externalMetadata &amp;&amp; jsonData.spec.externalMetadata.displayName)
+    return (jsonData &amp;&amp; jsonData.metadata &amp;&amp; jsonData.metadata.name
+      &amp;&amp; jsonData.spec &amp;&amp; jsonData.spec.externalMetadata &amp;&amp; jsonData.spec.externalMetadata.displayName);
   }
 
   /**

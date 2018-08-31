@@ -567,9 +567,9 @@
     "__docId__": 48,
     "kind": "file",
     "name": "src/clients/mock-provisioned-service-client.js",
-    "content": "import ProvisionedService from \"../types/provisioned-service\";\n\n/**\n * Mock client for retrieving and parsing Provisioned Services.\n */\nexport default class MockProvisionedServiceClient {\n  /**\n   * Retrieve a {@link ProvisionedService} from a namespace, by name.\n   * @returns {ProvisionedService}\n   */\n  static getProvisionedService() {\n    const identifier = MockProvisionedServiceClient._randomIdentifier();\n    return new ProvisionedService(`mock-service-${identifier}`, `https://mock-service-${identifier}.com/`, `mock-service-${identifier}-name`);\n  }\n\n  /**\n   * Retrieve a randomly named {@link ProvisionedService}\n   * @returns {ProvisionedService[]}\n   */\n  static listProvisionedServices() {\n    return [this.getProvisionedService(), this.getProvisionedService(), this.getProvisionedService];\n  }\n\n  /**\n   * Generate a random identifier for the client.\n   * @private\n   * @returns {number}\n   */\n  static _randomIdentifier() {\n    return Math.floor(Math.random() * (9999 - 1000 + 1)) + 1000;\n  }\n}\n",
+    "content": "import ProvisionedService from \"../types/provisioned-service\";\n\n/**\n * Mock client for retrieving and parsing Provisioned Services.\n */\nexport default class MockProvisionedServiceClient {\n  /**\n   * Retrieve a {@link ProvisionedService} from a namespace, by name.\n   * @returns {Promise<ProvisionedService>}\n   */\n  static getProvisionedService() {\n    return Promise.resolve(this.buildMockProvisionedService());\n  }\n\n  /**\n   * Retrieve a randomly named {@link ProvisionedService}\n   * @returns {Promise<ProvisionedService[]>}\n   */\n  static listProvisionedServices() {\n    return Promise.resolve([this.buildMockProvisionedService(), this.buildMockProvisionedService(), this.buildMockProvisionedService()]);\n  }\n\n  /**\n   * Create a mock provisioned service.\n   * @private\n   * @returns {ProvisionedService}\n   */\n  static buildMockProvisionedService() {\n    const identifier = MockProvisionedServiceClient.randomIdentifier();\n    return new ProvisionedService(`mock-service-${identifier}`,\n      `https://mock-service-${identifier}.com/`, `mock-service-${identifier}-name`);\n  }\n\n  /**\n   * Generate a random identifier for the client.\n   * @private\n   * @returns {number}\n   */\n  static randomIdentifier() {\n    return Math.floor(Math.random() * (9999 - 1000 + 1)) + 1000;\n  }\n}\n",
     "static": true,
-    "longname": "/Users/aidenkeating/work/openshift-resource-parser/src/clients/mock-provisioned-service-client.js",
+    "longname": "/home/dmartin/work/openshift-resource-parser/src/clients/mock-provisioned-service-client.js",
     "access": "public",
     "description": null,
     "lineNumber": 1
@@ -604,13 +604,13 @@
     "unknown": [
       {
         "tagName": "@returns",
-        "tagValue": "{ProvisionedService}"
+        "tagValue": "{Promise<ProvisionedService>}"
       }
     ],
     "return": {
       "nullable": null,
       "types": [
-        "ProvisionedService"
+        "Promise<ProvisionedService>"
       ],
       "spread": false,
       "description": ""
@@ -628,17 +628,17 @@
     "longname": "src/clients/mock-provisioned-service-client.js~MockProvisionedServiceClient.listProvisionedServices",
     "access": "public",
     "description": "Retrieve a randomly named {@link ProvisionedService}",
-    "lineNumber": 20,
+    "lineNumber": 19,
     "unknown": [
       {
         "tagName": "@returns",
-        "tagValue": "{ProvisionedService[]}"
+        "tagValue": "{Promise<ProvisionedService[]>}"
       }
     ],
     "return": {
       "nullable": null,
       "types": [
-        "ProvisionedService[]"
+        "Promise<ProvisionedService[]>"
       ],
       "spread": false,
       "description": ""
@@ -648,15 +648,43 @@
   {
     "__docId__": 52,
     "kind": "method",
-    "name": "_randomIdentifier",
+    "name": "buildMockProvisionedService",
     "memberof": "src/clients/mock-provisioned-service-client.js~MockProvisionedServiceClient",
     "generator": false,
     "async": false,
     "static": true,
-    "longname": "src/clients/mock-provisioned-service-client.js~MockProvisionedServiceClient._randomIdentifier",
+    "longname": "src/clients/mock-provisioned-service-client.js~MockProvisionedServiceClient.buildMockProvisionedService",
+    "access": "private",
+    "description": "Create a mock provisioned service.",
+    "lineNumber": 28,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{ProvisionedService}"
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "ProvisionedService"
+      ],
+      "spread": false,
+      "description": ""
+    },
+    "params": []
+  },
+  {
+    "__docId__": 53,
+    "kind": "method",
+    "name": "randomIdentifier",
+    "memberof": "src/clients/mock-provisioned-service-client.js~MockProvisionedServiceClient",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/clients/mock-provisioned-service-client.js~MockProvisionedServiceClient.randomIdentifier",
     "access": "private",
     "description": "Generate a random identifier for the client.",
-    "lineNumber": 29,
+    "lineNumber": 39,
     "unknown": [
       {
         "tagName": "@returns",
@@ -674,18 +702,18 @@
     "params": []
   },
   {
-    "__docId__": 53,
+    "__docId__": 54,
     "kind": "file",
     "name": "src/clients/provisioned-service-client.js",
-    "content": "import ClusterServiceClass from \"../types/cluster-service-class\";\nimport ServiceInstance from \"../types/service-instance\";\nimport ProvisionedService from \"../types/provisioned-service\";\n\n/**\n * Client for retrieving and parsing Provisioned Services.\n */\nexport default class ProvisionedServiceClient {\n  /**\n   * Construct a {@link ProvisionedServiceClient}\n   * @constructor\n   * @param {string} openshiftURL\n   */\n  constructor(openshiftURL) {\n    this.openshiftURL = openshiftURL;\n  }\n\n  /**\n   * Retrieve a {@link ProvisionedService} from a namespace, by name.\n   * @param {string} authToken The auth token for a user.\n   * @param {string} namespace The namespace to find the service in.\n   * @param {string} name The name of the service to retrieve.\n   */\n  getProvisionedService(authToken, namespace, name) {\n    return this.listProvisionedServices(authToken, namespace)\n      .then((provisionedServices) => {\n        if (!provisionedServices || (provisionedServices.length === 0)) {\n          return Promise.reject(new Error(`Provisioned service with the name ${name} not found in namespace ${namespace}`));\n        }\n        return provisionedServices.find(provisionedService => provisionedService.name === name);\n      })\n      .then((provisionedService) => {\n        if (!provisionedService) {\n          return Promise.reject(new Error(`Provisioned service with the name ${name} not found in namespace ${namespace}`));\n        }\n        return provisionedService;\n      });\n  }\n\n  /**\n   * Retrieve a list of {@link ProvisionedService} from a namespace.\n   * @param {string} authToken\n   * @param {string} namespace\n   */\n  listProvisionedServices(authToken, namespace) {\n    return Promise.all([\n      this._listClusterServiceClasses(this.openshiftURL, authToken),\n      this._listServiceInstances(this.openshiftURL, authToken, namespace)])\n      .then(([clusterServiceClasses, serviceInstances]) => {\n        if (!serviceInstances || (serviceInstances.length === 0)) {\n          return [];\n        }\n        return serviceInstances.map((serviceInstance) => {\n          const displayName = clusterServiceClasses.find(serviceClass => serviceClass.name === serviceInstance.clusterServiceClassId);\n          return new ProvisionedService(serviceInstance.name, serviceInstance.consoleURL, displayName);\n        });\n      });\n  }\n\n  /**\n   * Retrieve a list of {@link ServiceInstance} from a namespace in OpenShift.\n   * @private\n   * @param {string} openshiftURL An OpenShift URL.\n   * @param {string} authToken An auth token for a user.\n   * @param {string} namespace The namespace to list the service instances from.\n   * @returns {Promise<ServiceInstance[]>}\n   */\n  _listServiceInstances(openshiftURL, authToken, namespace) {\n    if (!authToken) {\n      return Promise.reject(new Error(\"Auth token should not be null\"));\n    }\n\n    const headers = new Headers({\n      'Authorization': `Bearer ${authToken}`\n    });\n    return fetch(ProvisionedServiceClient._buildServiceInstanceListRoute(openshiftURL, namespace), { headers: headers })\n      .then(response => response.json())\n      .then(jsonData => jsonData.items.map(serviceInstanceJSON => ServiceInstance.fromJSON(serviceInstanceJSON)));\n  }\n\n  /**\n   * Retrieve a list of {@link ClusterServiceClass} in OpenShift.\n   * @private\n   * @param {string} openshiftURL An OpenShift URL.\n   * @param {string} authToken An auth token for a user.\n   * @returns {Promise<ClusterServiceClass[]>}\n   */\n  _listClusterServiceClasses(openshiftURL, authToken) {\n    if (!authToken) {\n      return Promise.reject(new Error(\"Auth token should not be null\"));\n    }\n\n    const headers = new Headers({\n      'Authorization': `Bearer ${authToken}`\n    });\n    return fetch(ProvisionedServiceClient._buildClusterServiceClassListRoute(openshiftURL), { headers: headers })\n      .then(response => response.json())\n      .then(jsonData => jsonData.items.filter(serviceClassJSON => ClusterServiceClass.isValidJSON(serviceClassJSON)))\n      .then(jsonData => jsonData.map(serviceClassJSON => ClusterServiceClass.fromJSON(serviceClassJSON)));\n  }\n\n  /**\n   * Return a valid route for retrieving service instances from OpenShift.\n   * @private\n   * @param {string} openshiftURL The URL of OpenShift\n   * @param {string} namespace The namespace to retrieve the service instances from\n   */\n  static _buildServiceInstanceListRoute(openshiftURL, namespace) {\n    return `${openshiftURL}/apis/servicecatalog.k8s.io/v1beta1/namespaces/${namespace}/serviceinstances`;\n  }\n\n  /**\n   * Build a valid route for retrieving cluster service classes from OpenShift.\n   * @private\n   * @param {string} openshiftURL The URL of OpenShift\n   */\n  static _buildClusterServiceClassListRoute(openshiftURL) {\n    return `${openshiftURL}/apis/servicecatalog.k8s.io/v1beta1/clusterserviceclasses`;\n  }\n}\n",
+    "content": "import ClusterServiceClass from \"../types/cluster-service-class\";\nimport ServiceInstance from \"../types/service-instance\";\nimport ProvisionedService from \"../types/provisioned-service\";\n\n/**\n * Client for retrieving and parsing Provisioned Services.\n */\nexport default class ProvisionedServiceClient {\n  /**\n   * Construct a {@link ProvisionedServiceClient}\n   * @constructor\n   * @param {string} openshiftURL\n   */\n  constructor(openshiftURL, unauthorizedHandler) {\n    this.openshiftURL = openshiftURL;\n    this.unauthorizedHandler = unauthorizedHandler;\n  }\n\n  /**\n   * Retrieve a {@link ProvisionedService} from a namespace, by name.\n   * @param {string} authToken The auth token for a user.\n   * @param {string} namespace The namespace to find the service in.\n   * @param {string} name The name of the service to retrieve.\n   */\n  getProvisionedService(authToken, namespace, name) {\n    return this.listProvisionedServices(authToken, namespace)\n      .then((provisionedServices) => {\n        if (!provisionedServices || (provisionedServices.length === 0)) {\n          return Promise.reject(new Error(`Provisioned service with the name ${name} not found in namespace ${namespace}`));\n        }\n        return provisionedServices.find(provisionedService => provisionedService.name === name);\n      })\n      .then((provisionedService) => {\n        if (!provisionedService) {\n          return Promise.reject(new Error(`Provisioned service with the name ${name} not found in namespace ${namespace}`));\n        }\n        return provisionedService;\n      });\n  }\n\n  /**\n   * Retrieve a list of {@link ProvisionedService} from a namespace.\n   * @param {string} authToken\n   * @param {string} namespace\n   */\n  listProvisionedServices(authToken, namespace) {\n    return Promise.all([\n      this.listClusterServiceClasses(this.openshiftURL, authToken),\n      this.listServiceInstances(this.openshiftURL, authToken, namespace)])\n      .then(([clusterServiceClasses, serviceInstances]) => {\n        if (!serviceInstances || (serviceInstances.length === 0)) {\n          return [];\n        }\n        return serviceInstances.map((serviceInstance) => {\n          const displayName = clusterServiceClasses.find(serviceClass => serviceClass.name === serviceInstance.clusterServiceClassId);\n          return new ProvisionedService(serviceInstance.name, serviceInstance.consoleURL, displayName);\n        });\n      });\n  }\n\n  responseHandler(response) {\n    if (response.ok) {\n      return response.json();\n    } else if (response.status === 401) {\n      this.unauthorizedHandler();\n      return;\n    } else {\n      var error = new Error(response.statusText)\n      error.response = response\n      throw error\n    }\n  }\n\n  /**\n   * Retrieve a list of {@link ServiceInstance} from a namespace in OpenShift.\n   * @private\n   * @param {string} openshiftURL An OpenShift URL.\n   * @param {string} authToken An auth token for a user.\n   * @param {string} namespace The namespace to list the service instances from.\n   * @returns {Promise<ServiceInstance[]>}\n   */\n  listServiceInstances(openshiftURL, authToken, namespace) {\n    if (!authToken) {\n      return Promise.reject(new Error(\"Auth token should not be null\"));\n    }\n\n    const headers = new Headers({\n      Authorization: `Bearer ${authToken}`,\n    });\n    return fetch(this.buildServiceInstanceListRoute(openshiftURL, namespace), { headers })\n      .then(this.responseHandler.bind(this))\n      .then(jsonData => jsonData.items.map(serviceInstanceJSON => ServiceInstance.fromJSON(serviceInstanceJSON)));\n  }\n\n  /**\n   * Retrieve a list of {@link ClusterServiceClass} in OpenShift.\n   * @private\n   * @param {string} openshiftURL An OpenShift URL.\n   * @param {string} authToken An auth token for a user.\n   * @returns {Promise<ClusterServiceClass[]>}\n   */\n  listClusterServiceClasses(openshiftURL, authToken) {\n    if (!authToken) {\n      return Promise.reject(new Error(\"Auth token should not be null\"));\n    }\n\n    const headers = new Headers({\n      Authorization: `Bearer ${authToken}`,\n    });\n    return fetch(this.buildClusterServiceClassListRoute(openshiftURL), { headers })\n      .then(this.responseHandler.bind(this))\n      .then(jsonData => jsonData.items.filter(serviceClassJSON => ClusterServiceClass.isValidJSON(serviceClassJSON)))\n      .then(jsonData => jsonData.map(serviceClassJSON => ClusterServiceClass.fromJSON(serviceClassJSON)));\n  }\n\n  /**\n   * Return a valid route for retrieving service instances from OpenShift.\n   * @private\n   * @param {string} openshiftURL The URL of OpenShift\n   * @param {string} namespace The namespace to retrieve the service instances from\n   */\n  buildServiceInstanceListRoute(openshiftURL, namespace) {\n    return `${openshiftURL}/apis/servicecatalog.k8s.io/v1beta1/namespaces/${namespace}/serviceinstances`;\n  }\n\n  /**\n   * Build a valid route for retrieving cluster service classes from OpenShift.\n   * @private\n   * @param {string} openshiftURL The URL of OpenShift\n   */\n  buildClusterServiceClassListRoute(openshiftURL) {\n    return `${openshiftURL}/apis/servicecatalog.k8s.io/v1beta1/clusterserviceclasses`;\n  }\n}\n",
     "static": true,
-    "longname": "/Users/aidenkeating/work/openshift-resource-parser/src/clients/provisioned-service-client.js",
+    "longname": "/home/dmartin/work/openshift-resource-parser/src/clients/provisioned-service-client.js",
     "access": "public",
     "description": null,
     "lineNumber": 1
   },
   {
-    "__docId__": 54,
+    "__docId__": 55,
     "kind": "class",
     "name": "ProvisionedServiceClient",
     "memberof": "src/clients/provisioned-service-client.js",
@@ -700,7 +728,7 @@
     "interface": false
   },
   {
-    "__docId__": 55,
+    "__docId__": 56,
     "kind": "constructor",
     "name": "constructor",
     "memberof": "src/clients/provisioned-service-client.js~ProvisionedServiceClient",
@@ -731,7 +759,7 @@
     ]
   },
   {
-    "__docId__": 56,
+    "__docId__": 57,
     "kind": "member",
     "name": "openshiftURL",
     "memberof": "src/clients/provisioned-service-client.js~ProvisionedServiceClient",
@@ -748,7 +776,24 @@
     }
   },
   {
-    "__docId__": 57,
+    "__docId__": 58,
+    "kind": "member",
+    "name": "unauthorizedHandler",
+    "memberof": "src/clients/provisioned-service-client.js~ProvisionedServiceClient",
+    "static": false,
+    "longname": "src/clients/provisioned-service-client.js~ProvisionedServiceClient#unauthorizedHandler",
+    "access": "public",
+    "description": null,
+    "lineNumber": 16,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 59,
     "kind": "method",
     "name": "getProvisionedService",
     "memberof": "src/clients/provisioned-service-client.js~ProvisionedServiceClient",
@@ -758,7 +803,7 @@
     "longname": "src/clients/provisioned-service-client.js~ProvisionedServiceClient#getProvisionedService",
     "access": "public",
     "description": "Retrieve a {@link ProvisionedService} from a namespace, by name.",
-    "lineNumber": 24,
+    "lineNumber": 25,
     "params": [
       {
         "nullable": null,
@@ -798,7 +843,7 @@
     }
   },
   {
-    "__docId__": 58,
+    "__docId__": 60,
     "kind": "method",
     "name": "listProvisionedServices",
     "memberof": "src/clients/provisioned-service-client.js~ProvisionedServiceClient",
@@ -808,7 +853,7 @@
     "longname": "src/clients/provisioned-service-client.js~ProvisionedServiceClient#listProvisionedServices",
     "access": "public",
     "description": "Retrieve a list of {@link ProvisionedService} from a namespace.",
-    "lineNumber": 45,
+    "lineNumber": 46,
     "params": [
       {
         "nullable": null,
@@ -838,17 +883,44 @@
     }
   },
   {
-    "__docId__": 59,
+    "__docId__": 61,
     "kind": "method",
-    "name": "_listServiceInstances",
+    "name": "responseHandler",
     "memberof": "src/clients/provisioned-service-client.js~ProvisionedServiceClient",
     "generator": false,
     "async": false,
     "static": false,
-    "longname": "src/clients/provisioned-service-client.js~ProvisionedServiceClient#_listServiceInstances",
+    "longname": "src/clients/provisioned-service-client.js~ProvisionedServiceClient#responseHandler",
+    "access": "public",
+    "description": null,
+    "lineNumber": 61,
+    "undocument": true,
+    "params": [
+      {
+        "name": "response",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 62,
+    "kind": "method",
+    "name": "listServiceInstances",
+    "memberof": "src/clients/provisioned-service-client.js~ProvisionedServiceClient",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/clients/provisioned-service-client.js~ProvisionedServiceClient#listServiceInstances",
     "access": "private",
     "description": "Retrieve a list of {@link ServiceInstance} from a namespace in OpenShift.",
-    "lineNumber": 68,
+    "lineNumber": 82,
     "unknown": [
       {
         "tagName": "@returns",
@@ -897,17 +969,17 @@
     }
   },
   {
-    "__docId__": 60,
+    "__docId__": 63,
     "kind": "method",
-    "name": "_listClusterServiceClasses",
+    "name": "listClusterServiceClasses",
     "memberof": "src/clients/provisioned-service-client.js~ProvisionedServiceClient",
     "generator": false,
     "async": false,
     "static": false,
-    "longname": "src/clients/provisioned-service-client.js~ProvisionedServiceClient#_listClusterServiceClasses",
+    "longname": "src/clients/provisioned-service-client.js~ProvisionedServiceClient#listClusterServiceClasses",
     "access": "private",
     "description": "Retrieve a list of {@link ClusterServiceClass} in OpenShift.",
-    "lineNumber": 88,
+    "lineNumber": 102,
     "unknown": [
       {
         "tagName": "@returns",
@@ -946,17 +1018,17 @@
     }
   },
   {
-    "__docId__": 61,
+    "__docId__": 64,
     "kind": "method",
-    "name": "_buildServiceInstanceListRoute",
+    "name": "buildServiceInstanceListRoute",
     "memberof": "src/clients/provisioned-service-client.js~ProvisionedServiceClient",
     "generator": false,
     "async": false,
-    "static": true,
-    "longname": "src/clients/provisioned-service-client.js~ProvisionedServiceClient._buildServiceInstanceListRoute",
+    "static": false,
+    "longname": "src/clients/provisioned-service-client.js~ProvisionedServiceClient#buildServiceInstanceListRoute",
     "access": "private",
     "description": "Return a valid route for retrieving service instances from OpenShift.",
-    "lineNumber": 108,
+    "lineNumber": 122,
     "params": [
       {
         "nullable": null,
@@ -986,17 +1058,17 @@
     }
   },
   {
-    "__docId__": 62,
+    "__docId__": 65,
     "kind": "method",
-    "name": "_buildClusterServiceClassListRoute",
+    "name": "buildClusterServiceClassListRoute",
     "memberof": "src/clients/provisioned-service-client.js~ProvisionedServiceClient",
     "generator": false,
     "async": false,
-    "static": true,
-    "longname": "src/clients/provisioned-service-client.js~ProvisionedServiceClient._buildClusterServiceClassListRoute",
+    "static": false,
+    "longname": "src/clients/provisioned-service-client.js~ProvisionedServiceClient#buildClusterServiceClassListRoute",
     "access": "private",
     "description": "Build a valid route for retrieving cluster service classes from OpenShift.",
-    "lineNumber": 117,
+    "lineNumber": 131,
     "params": [
       {
         "nullable": null,
@@ -1016,18 +1088,18 @@
     }
   },
   {
-    "__docId__": 63,
+    "__docId__": 66,
     "kind": "file",
     "name": "src/main.js",
-    "content": "import ProvisionedService from \"./types/provisioned-service\";\nimport ProvisionedServiceClient from \"./clients/provisioned-service-client\";\nimport MockProvisionedServiceClient from \"./clients/mock-provisioned-service-client\";\n\n/**\n * Provides a set of functions for retrieving various OpenShift resources and\n * parsing them into a specific format.\n */\nexport default class OpenShiftResourceParser {\n  /**\n   * Construct a new {@link OpenShiftResourceParser}\n   * @param {Object} config Configuration for the parser.\n   * @param {string} config.openshiftURL The URL of OpenShift.\n   * @param {boolean} config.mockData Whether the parser should use mock data or not.\n   */\n  constructor(config) {\n    this.config = config;\n    this.provisionedServiceClient = new ProvisionedServiceClient(this.config.openshiftURL);\n  }\n\n  /**\n   * Get a ProvisionedService from a specified namespace, by name.\n   * @param {string} authToken An auth token for a user.\n   * @param {string} namespace The namespace to find the service in.\n   * @param {string} serviceName The name of the service to retrieve.\n   * @returns {Promise<ProvisionedService>}\n   */\n  getProvisionedMWService(authToken, namespace, serviceName) {\n    if (this.config.mockData) {\n      return MockProvisionedServiceClient.getProvisionedService();\n    }\n    return this.provisionedServiceClient.getProvisionedService(authToken, namespace, serviceName);\n  }\n\n  /**\n   * Retrieve a list of provisioned services in a namespace.\n   * @param {string} authToken\n   * @param {string} namespace\n   * @returns {Promise<ProvisionedService>}\n   */\n  listProvisionedMWServices(authToken, namespace) {\n    if (this.config.mockData) {\n      return MockProvisionedServiceClient.listProvisionedServices();\n    }\n    return this.provisionedServiceClient.listProvisionedServices(authToken, namespace);\n  }\n}\n",
+    "content": "import ProvisionedServiceClient from \"./clients/provisioned-service-client\";\nimport MockProvisionedServiceClient from \"./clients/mock-provisioned-service-client\";\nimport ClientOAuth2 from \"client-oauth2\"\n\n/**\n * Provides a set of functions for retrieving various OpenShift resources and\n * parsing them into a specific format.\n */\nexport default class OpenShiftResourceParser {\n  /**\n   * Construct a new {@link OpenShiftResourceParser}\n   * @param {Object} config Configuration for the parser.\n   * @param {boolean} config.mockData Whether the parser should use mock data or not. If true, all other config is ignored.\n   * @param {clientId} config.clientId ID of the OAuthClient in OpenShift\n   * @param {accessTokenUri} config.accessTokenUri : Access Token URI in OpenShift\n   * @param {authorizationUri} config.authorizationUri : Authorization URI in OpenShift\n   * @param {redirectUri} config.redirectUri : Redirect URI for the OAuth Flow after retrieving a token\n   * @param {scopes} config.scopes : User Scopes to request in the OAuth Flow\n   * @param {masterUri} config.masterUri : OpenShift Master URI for making resource API calls\n    */\n  constructor(config) {\n    this.config = config;\n    if (!this.config.mockData) {\n      this.provisionedServiceClient = new ProvisionedServiceClient(this.config, this.startOAuth);\n    }\n  }\n\n  /**\n   * Attempts to load the user details from local storage, returning a Promise\n   * with the user details (including the access token).\n   * If there's no user or an error, the OAuth flow is started.\n   * @returns {Promise<User>}\n   */\n  withUser() {\n    let user;\n    try {\n      const userRaw = window.localStorage.getItem('OpenShiftUser');\n      if (userRaw) {\n        user = JSON.parse(userRaw);\n      }\n    } catch (e) {\n      console.error(e);\n      window.localStorage.removeItem('OpenShiftUser');\n    }\n\n    if (!user) {\n      return this.startOAuth();\n    } else {\n      return new Promise((resolve, reject) => {\n        return resolve(user);\n      });\n    }\n  }\n\n  /**\n   * Saves the user to local storage for retrieval of the token later as needed\n   * @param {User} user \n   */\n  setUser(user) {\n    if (!user) {\n      window.localStorage.setItem('OpenShiftUser', null);\n      return;\n    }\n    window.localStorage.setItem('OpenShiftUser', JSON.stringify(user));\n  }\n\n  /**\n   * Internal function to construct an oauth client from the oauth lib.\n   */\n  getOauthClient() {\n    return new ClientOAuth2({\n      clientId: this.config.clientId,\n      accessTokenUri: this.config.accessTokenUri,\n      authorizationUri: this.config.authorizationUri,\n      redirectUri: this.config.redirectUri + '?then=' + window.location.href,\n      scopes: this.config.scopes\n    });\n  }\n\n  /**\n   * Starts the OAuth flow, loading the configured authorize url.\n   * Shouldn't need to be called manually.\n   * This is called automatically by the library internals if an \n   * API call is attempted and there is no user details/access token.\n   */\n  startOAuth() {\n    var openshiftAuth = this.getOauthClient();\n\n    return window.location = openshiftAuth.token.getUri();\n  }\n\n  /**\n   * Finish the oauth flow, retrieving the access token, and passing\n   * data back to the user in a Promise.\n   * The returned object has 2 keys: `user` & `then`\n   * `user` has the access_token and some other user data\n   * `then` has the original url from before the oauth flow started\n   *  (useful if you want to restore the route the user was on)\n   * @returns {Promise<AuthData>}\n   */\n  finishOAuth() {\n    var openshiftAuth = this.getOauthClient();\n\n    return openshiftAuth.token.getToken(window.location.href).then(function (user) {\n      this.setUser(user.data);\n      const then = this.getParameterByName('then');\n      return {\n        user: user,\n        then: then\n      };\n    });\n  }\n\n  /**\n   * Removes the user session from local storage.\n   * Doing this will trigger an oauth flow the next time\n   * the library is used. It is recommended to handle the \n   * logout state change in your App by navigating elsewhere\n   * or reloading your App.\n   */\n  logout() {\n    this.setUser(null)\n  }\n\n  /**\n   * Retrieve a single parameter value from a URL that contains a query string\n   * @param {string} name The parameter name to get\n   * @param {string} url The full URL that includes the query string\n   * @returns {string} The parameter value\n   */\n  getParameterByName(name, url) {\n    if (!url) url = window.location.href;\n    name = name.replace(/[\\[\\]]/g, '\\\\$&');\n    var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),\n      results = regex.exec(url);\n    if (!results) return null;\n    if (!results[2]) return '';\n    return decodeURIComponent(results[2].replace(/\\+/g, ' '));\n  }\n\n  /**\n   * Get a ProvisionedService from a specified namespace, by name.\n   * @param {string} namespace The namespace to find the service in.\n   * @param {string} serviceName The name of the service to retrieve.\n   * @returns {Promise<ProvisionedService>}\n   */\n  getProvisionedMWService(namespace, serviceName) {\n    if (this.config.mockData) {\n      return MockProvisionedServiceClient.getProvisionedService();\n    }\n\n    this.withUser().then((user) => {\n      return this.provisionedServiceClient.getProvisionedService(user.access_token, namespace, serviceName);\n    });\n  }\n\n  /**\n   * Retrieve a list of provisioned services in a namespace.\n   * @param {string} namespace\n   * @returns {Promise<ProvisionedService>}\n   */\n  listProvisionedMWServices(namespace) {\n    if (this.config.mockData) {\n      return MockProvisionedServiceClient.listProvisionedServices();\n    }\n\n    return this.withUser().then((user) => {\n      return this.provisionedServiceClient.listProvisionedServices(user.access_token, namespace);\n    });\n  }\n}\n",
     "static": true,
-    "longname": "/Users/aidenkeating/work/openshift-resource-parser/src/main.js",
+    "longname": "/home/dmartin/work/openshift-resource-parser/src/main.js",
     "access": "public",
     "description": null,
     "lineNumber": 1
   },
   {
-    "__docId__": 64,
+    "__docId__": 67,
     "kind": "class",
     "name": "OpenShiftResourceParser",
     "memberof": "src/main.js",
@@ -1042,7 +1114,7 @@
     "interface": false
   },
   {
-    "__docId__": 65,
+    "__docId__": 68,
     "kind": "constructor",
     "name": "constructor",
     "memberof": "src/main.js~OpenShiftResourceParser",
@@ -1052,7 +1124,7 @@
     "longname": "src/main.js~OpenShiftResourceParser#constructor",
     "access": "public",
     "description": "Construct a new {@link OpenShiftResourceParser}",
-    "lineNumber": 16,
+    "lineNumber": 21,
     "params": [
       {
         "nullable": null,
@@ -1067,27 +1139,77 @@
       {
         "nullable": null,
         "types": [
-          "string"
-        ],
-        "spread": false,
-        "optional": false,
-        "name": "config.openshiftURL",
-        "description": "The URL of OpenShift."
-      },
-      {
-        "nullable": null,
-        "types": [
           "boolean"
         ],
         "spread": false,
         "optional": false,
         "name": "config.mockData",
-        "description": "Whether the parser should use mock data or not."
+        "description": "Whether the parser should use mock data or not. If true, all other config is ignored."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "clientId"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "config.clientId",
+        "description": "ID of the OAuthClient in OpenShift"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "accessTokenUri"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "config.accessTokenUri",
+        "description": ": Access Token URI in OpenShift"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "authorizationUri"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "config.authorizationUri",
+        "description": ": Authorization URI in OpenShift"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "redirectUri"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "config.redirectUri",
+        "description": ": Redirect URI for the OAuth Flow after retrieving a token"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "scopes"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "config.scopes",
+        "description": ": User Scopes to request in the OAuth Flow"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "masterUri"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "config.masterUri",
+        "description": ": OpenShift Master URI for making resource API calls"
       }
     ]
   },
   {
-    "__docId__": 66,
+    "__docId__": 69,
     "kind": "member",
     "name": "config",
     "memberof": "src/main.js~OpenShiftResourceParser",
@@ -1095,7 +1217,7 @@
     "longname": "src/main.js~OpenShiftResourceParser#config",
     "access": "public",
     "description": null,
-    "lineNumber": 17,
+    "lineNumber": 22,
     "undocument": true,
     "type": {
       "types": [
@@ -1104,7 +1226,7 @@
     }
   },
   {
-    "__docId__": 67,
+    "__docId__": 70,
     "kind": "member",
     "name": "provisionedServiceClient",
     "memberof": "src/main.js~OpenShiftResourceParser",
@@ -1112,7 +1234,7 @@
     "longname": "src/main.js~OpenShiftResourceParser#provisionedServiceClient",
     "access": "public",
     "description": null,
-    "lineNumber": 18,
+    "lineNumber": 24,
     "undocument": true,
     "type": {
       "types": [
@@ -1121,21 +1243,156 @@
     }
   },
   {
-    "__docId__": 68,
+    "__docId__": 71,
     "kind": "method",
-    "name": "getProvisionedMWService",
+    "name": "withUser",
     "memberof": "src/main.js~OpenShiftResourceParser",
     "generator": false,
     "async": false,
     "static": false,
-    "longname": "src/main.js~OpenShiftResourceParser#getProvisionedMWService",
+    "longname": "src/main.js~OpenShiftResourceParser#withUser",
     "access": "public",
-    "description": "Get a ProvisionedService from a specified namespace, by name.",
-    "lineNumber": 28,
+    "description": "Attempts to load the user details from local storage, returning a Promise\nwith the user details (including the access token).\nIf there's no user or an error, the OAuth flow is started.",
+    "lineNumber": 34,
     "unknown": [
       {
         "tagName": "@returns",
-        "tagValue": "{Promise<ProvisionedService>}"
+        "tagValue": "{Promise<User>}"
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Promise<User>"
+      ],
+      "spread": false,
+      "description": ""
+    },
+    "params": []
+  },
+  {
+    "__docId__": 72,
+    "kind": "method",
+    "name": "setUser",
+    "memberof": "src/main.js~OpenShiftResourceParser",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/main.js~OpenShiftResourceParser#setUser",
+    "access": "public",
+    "description": "Saves the user to local storage for retrieval of the token later as needed",
+    "lineNumber": 59,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "User"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "user",
+        "description": ""
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 73,
+    "kind": "method",
+    "name": "getOauthClient",
+    "memberof": "src/main.js~OpenShiftResourceParser",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/main.js~OpenShiftResourceParser#getOauthClient",
+    "access": "public",
+    "description": "Internal function to construct an oauth client from the oauth lib.",
+    "lineNumber": 70,
+    "params": [],
+    "return": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 74,
+    "kind": "method",
+    "name": "startOAuth",
+    "memberof": "src/main.js~OpenShiftResourceParser",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/main.js~OpenShiftResourceParser#startOAuth",
+    "access": "public",
+    "description": "Starts the OAuth flow, loading the configured authorize url.\nShouldn't need to be called manually.\nThis is called automatically by the library internals if an \nAPI call is attempted and there is no user details/access token.",
+    "lineNumber": 86,
+    "params": [],
+    "return": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 75,
+    "kind": "method",
+    "name": "finishOAuth",
+    "memberof": "src/main.js~OpenShiftResourceParser",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/main.js~OpenShiftResourceParser#finishOAuth",
+    "access": "public",
+    "description": "Finish the oauth flow, retrieving the access token, and passing\ndata back to the user in a Promise.\nThe returned object has 2 keys: `user` & `then`\n`user` has the access_token and some other user data\n`then` has the original url from before the oauth flow started\n (useful if you want to restore the route the user was on)",
+    "lineNumber": 101,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{Promise<AuthData>}"
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Promise<AuthData>"
+      ],
+      "spread": false,
+      "description": ""
+    },
+    "params": []
+  },
+  {
+    "__docId__": 76,
+    "kind": "method",
+    "name": "logout",
+    "memberof": "src/main.js~OpenShiftResourceParser",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/main.js~OpenShiftResourceParser#logout",
+    "access": "public",
+    "description": "Removes the user session from local storage.\nDoing this will trigger an oauth flow the next time\nthe library is used. It is recommended to handle the \nlogout state change in your App by navigating elsewhere\nor reloading your App.",
+    "lineNumber": 121,
+    "params": [],
+    "return": null
+  },
+  {
+    "__docId__": 77,
+    "kind": "method",
+    "name": "getParameterByName",
+    "memberof": "src/main.js~OpenShiftResourceParser",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/main.js~OpenShiftResourceParser#getParameterByName",
+    "access": "public",
+    "description": "Retrieve a single parameter value from a URL that contains a query string",
+    "lineNumber": 131,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{string} The parameter value"
       }
     ],
     "params": [
@@ -1146,9 +1403,48 @@
         ],
         "spread": false,
         "optional": false,
-        "name": "authToken",
-        "description": "An auth token for a user."
+        "name": "name",
+        "description": "The parameter name to get"
       },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "url",
+        "description": "The full URL that includes the query string"
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "string"
+      ],
+      "spread": false,
+      "description": "The parameter value"
+    }
+  },
+  {
+    "__docId__": 78,
+    "kind": "method",
+    "name": "getProvisionedMWService",
+    "memberof": "src/main.js~OpenShiftResourceParser",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/main.js~OpenShiftResourceParser#getProvisionedMWService",
+    "access": "public",
+    "description": "Get a ProvisionedService from a specified namespace, by name.",
+    "lineNumber": 147,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{Promise<ProvisionedService>}"
+      }
+    ],
+    "params": [
       {
         "nullable": null,
         "types": [
@@ -1180,7 +1476,7 @@
     }
   },
   {
-    "__docId__": 69,
+    "__docId__": 79,
     "kind": "method",
     "name": "listProvisionedMWServices",
     "memberof": "src/main.js~OpenShiftResourceParser",
@@ -1190,7 +1486,7 @@
     "longname": "src/main.js~OpenShiftResourceParser#listProvisionedMWServices",
     "access": "public",
     "description": "Retrieve a list of provisioned services in a namespace.",
-    "lineNumber": 41,
+    "lineNumber": 162,
     "unknown": [
       {
         "tagName": "@returns",
@@ -1198,16 +1494,6 @@
       }
     ],
     "params": [
-      {
-        "nullable": null,
-        "types": [
-          "string"
-        ],
-        "spread": false,
-        "optional": false,
-        "name": "authToken",
-        "description": ""
-      },
       {
         "nullable": null,
         "types": [
@@ -1229,18 +1515,18 @@
     }
   },
   {
-    "__docId__": 70,
+    "__docId__": 80,
     "kind": "file",
     "name": "src/types/cluster-service-class.js",
-    "content": "export default class ClusterServiceClass {\n  /**\n   * Construct a new {@link ClusterServiceClass}\n   * @param {string} name The identifying name of the cluster service class\n   * @param {string} displayName The human-friendly name of the cluster service class\n   */\n  constructor(name, displayName) {\n    this.name = name;\n    this.displayName = displayName;\n  }\n\n  /**\n   * Return whether the provided JSON data is parsable by @see fromJSON \n   * This returning false does not mean the actual object is invalid in OpenShift.\n   * @param {Object} jsonData The JSON object to check\n   * @returns {boolean} \n   */\n  static isValidJSON(jsonData) {\n    return (jsonData && jsonData.metadata && jsonData.metadata.name &&\n      jsonData.spec && jsonData.spec.externalMetadata && jsonData.spec.externalMetadata.displayName)\n  }\n\n  /**\n   * Create a new {@link ClusterServiceClass} from a provided JSON object.\n   * @param {Object} jsonData The JSON object to parse\n   * @returns {ClusterServiceClass}\n   */\n  static fromJSON(jsonData) {\n    return new ClusterServiceClass(jsonData.metadata.name, jsonData.spec.externalMetadata.displayName);\n  }\n}\n",
+    "content": "export default class ClusterServiceClass {\n  /**\n   * Construct a new {@link ClusterServiceClass}\n   * @param {string} name The identifying name of the cluster service class\n   * @param {string} displayName The human-friendly name of the cluster service class\n   */\n  constructor(name, displayName) {\n    this.name = name;\n    this.displayName = displayName;\n  }\n\n  /**\n   * Return whether the provided JSON data is parsable by @see fromJSON\n   * This returning false does not mean the actual object is invalid in OpenShift.\n   * @param {Object} jsonData The JSON object to check\n   * @returns {boolean}\n   */\n  static isValidJSON(jsonData) {\n    return (jsonData && jsonData.metadata && jsonData.metadata.name\n      && jsonData.spec && jsonData.spec.externalMetadata && jsonData.spec.externalMetadata.displayName);\n  }\n\n  /**\n   * Create a new {@link ClusterServiceClass} from a provided JSON object.\n   * @param {Object} jsonData The JSON object to parse\n   * @returns {ClusterServiceClass}\n   */\n  static fromJSON(jsonData) {\n    return new ClusterServiceClass(jsonData.metadata.name, jsonData.spec.externalMetadata.displayName);\n  }\n}\n",
     "static": true,
-    "longname": "/Users/aidenkeating/work/openshift-resource-parser/src/types/cluster-service-class.js",
+    "longname": "/home/dmartin/work/openshift-resource-parser/src/types/cluster-service-class.js",
     "access": "public",
     "description": null,
     "lineNumber": 1
   },
   {
-    "__docId__": 71,
+    "__docId__": 81,
     "kind": "class",
     "name": "ClusterServiceClass",
     "memberof": "src/types/cluster-service-class.js",
@@ -1256,7 +1542,7 @@
     "interface": false
   },
   {
-    "__docId__": 72,
+    "__docId__": 82,
     "kind": "constructor",
     "name": "constructor",
     "memberof": "src/types/cluster-service-class.js~ClusterServiceClass",
@@ -1291,7 +1577,7 @@
     ]
   },
   {
-    "__docId__": 73,
+    "__docId__": 83,
     "kind": "member",
     "name": "name",
     "memberof": "src/types/cluster-service-class.js~ClusterServiceClass",
@@ -1308,7 +1594,7 @@
     }
   },
   {
-    "__docId__": 74,
+    "__docId__": 84,
     "kind": "member",
     "name": "displayName",
     "memberof": "src/types/cluster-service-class.js~ClusterServiceClass",
@@ -1325,7 +1611,7 @@
     }
   },
   {
-    "__docId__": 75,
+    "__docId__": 85,
     "kind": "method",
     "name": "isValidJSON",
     "memberof": "src/types/cluster-service-class.js~ClusterServiceClass",
@@ -1334,12 +1620,12 @@
     "static": true,
     "longname": "src/types/cluster-service-class.js~ClusterServiceClass.isValidJSON",
     "access": "public",
-    "description": "Return whether the provided JSON data is parsable by @see fromJSON \nThis returning false does not mean the actual object is invalid in OpenShift.",
+    "description": "Return whether the provided JSON data is parsable by @see fromJSON\nThis returning false does not mean the actual object is invalid in OpenShift.",
     "lineNumber": 18,
     "unknown": [
       {
         "tagName": "@returns",
-        "tagValue": "{boolean} "
+        "tagValue": "{boolean}"
       }
     ],
     "params": [
@@ -1364,7 +1650,7 @@
     }
   },
   {
-    "__docId__": 76,
+    "__docId__": 86,
     "kind": "method",
     "name": "fromJSON",
     "memberof": "src/types/cluster-service-class.js~ClusterServiceClass",
@@ -1403,18 +1689,18 @@
     }
   },
   {
-    "__docId__": 77,
+    "__docId__": 87,
     "kind": "file",
     "name": "src/types/provisioned-service.js",
     "content": "export default class ProvisionedService {\n  /**\n   * Construct a new {@link ProvisionedService}.\n   * @constructor\n   * @param {string} name The name of the service\n   * @param {string} consoleURL The dashboard URL of the service\n   * @param {ClusterServiceClass} service The cluster service class\n   */\n  constructor(name, consoleURL, service) {\n    this.name = name;\n    this.consoleURL = consoleURL;\n    this.service = service;\n  }\n}\n",
     "static": true,
-    "longname": "/Users/aidenkeating/work/openshift-resource-parser/src/types/provisioned-service.js",
+    "longname": "/home/dmartin/work/openshift-resource-parser/src/types/provisioned-service.js",
     "access": "public",
     "description": null,
     "lineNumber": 1
   },
   {
-    "__docId__": 78,
+    "__docId__": 88,
     "kind": "class",
     "name": "ProvisionedService",
     "memberof": "src/types/provisioned-service.js",
@@ -1430,7 +1716,7 @@
     "interface": false
   },
   {
-    "__docId__": 79,
+    "__docId__": 89,
     "kind": "constructor",
     "name": "constructor",
     "memberof": "src/types/provisioned-service.js~ProvisionedService",
@@ -1481,7 +1767,7 @@
     ]
   },
   {
-    "__docId__": 80,
+    "__docId__": 90,
     "kind": "member",
     "name": "name",
     "memberof": "src/types/provisioned-service.js~ProvisionedService",
@@ -1498,7 +1784,7 @@
     }
   },
   {
-    "__docId__": 81,
+    "__docId__": 91,
     "kind": "member",
     "name": "consoleURL",
     "memberof": "src/types/provisioned-service.js~ProvisionedService",
@@ -1515,7 +1801,7 @@
     }
   },
   {
-    "__docId__": 82,
+    "__docId__": 92,
     "kind": "member",
     "name": "service",
     "memberof": "src/types/provisioned-service.js~ProvisionedService",
@@ -1532,18 +1818,18 @@
     }
   },
   {
-    "__docId__": 83,
+    "__docId__": 93,
     "kind": "file",
     "name": "src/types/service-instance.js",
     "content": "export default class ServiceInstance {\n  constructor(name, consoleURL, clusterServiceClassId) {\n    this.name = name;\n    this.consoleURL = consoleURL;\n    this.clusterServiceClassId = clusterServiceClassId;\n  }\n\n  static fromJSON(jsonData) {\n    const { name } = jsonData.metadata;\n    const consoleURL = jsonData.status.dashboardURL;\n    const clusterServiceClassId = jsonData.spec.clusterServiceClassRef.name;\n\n    return new ServiceInstance(name, consoleURL, clusterServiceClassId);\n  }\n}\n",
     "static": true,
-    "longname": "/Users/aidenkeating/work/openshift-resource-parser/src/types/service-instance.js",
+    "longname": "/home/dmartin/work/openshift-resource-parser/src/types/service-instance.js",
     "access": "public",
     "description": null,
     "lineNumber": 1
   },
   {
-    "__docId__": 84,
+    "__docId__": 94,
     "kind": "class",
     "name": "ServiceInstance",
     "memberof": "src/types/service-instance.js",
@@ -1559,7 +1845,7 @@
     "interface": false
   },
   {
-    "__docId__": 85,
+    "__docId__": 95,
     "kind": "constructor",
     "name": "constructor",
     "memberof": "src/types/service-instance.js~ServiceInstance",
@@ -1573,7 +1859,7 @@
     "undocument": true
   },
   {
-    "__docId__": 86,
+    "__docId__": 96,
     "kind": "member",
     "name": "name",
     "memberof": "src/types/service-instance.js~ServiceInstance",
@@ -1590,7 +1876,7 @@
     }
   },
   {
-    "__docId__": 87,
+    "__docId__": 97,
     "kind": "member",
     "name": "consoleURL",
     "memberof": "src/types/service-instance.js~ServiceInstance",
@@ -1607,7 +1893,7 @@
     }
   },
   {
-    "__docId__": 88,
+    "__docId__": 98,
     "kind": "member",
     "name": "clusterServiceClassId",
     "memberof": "src/types/service-instance.js~ServiceInstance",
@@ -1624,7 +1910,7 @@
     }
   },
   {
-    "__docId__": 89,
+    "__docId__": 99,
     "kind": "method",
     "name": "fromJSON",
     "memberof": "src/types/service-instance.js~ServiceInstance",
@@ -1652,16 +1938,16 @@
   },
   {
     "kind": "index",
-    "content": "# OpenShift Resource Parser\n\nA library for retrieving and parsing various OpenShift resources.\n\n* Documentation - See the `docs/` directory.\n* Testing - Run `yarn run test`.\n",
-    "longname": "/Users/aidenkeating/work/openshift-resource-parser/README.md",
+    "content": "# OpenShift Resource Parser\n\nA library for retrieving and parsing various OpenShift resources.\nYou will need to set configuration when creating a new instance.\n\n```\nconst config = {\n  mockData: <enable_mock_data>\n  clientId: '<openshift_oauthclient_id>',\n  accessTokenUri: '<openshift_access_token_uri>',\n  authorizationUri: '<openshift_authorize_uri>',\n  redirectUri: '<openshift_redirect_uri>',\n  scopes: [<user scopes>],\n  masterUri: '<openshift_master_uri>'\n};\n```\n\nFor example, with a local openshift cluster:\n\n```js\nconst config = {\n  clientId: 'my-app',\n  accessTokenUri: 'https://localhost:8443/oauth/token',\n  authorizationUri: 'https://localhost:8443/oauth/authorize',\n  redirectUri: 'http://myapp.example.com/oauth/callback',\n  scopes: ['user:full'],\n  masterUri: 'https://localhost:8443'\n};\n\nconst parser = new OpenShiftResourceParser(config);\n```\n\nWhen you attempt to use the library, and a user has not authorized yet, the OAuth flow will start automatically.\nHowever, if you want to *manually* start the OAuth flow, you can call the following:\n\n```js\nparser.startOAuth()\n```\n\nYou will need to add an oauth callback route (e.g. `/oauth/callback`) to your App.\nThis route should call the below code to finish the oauth flow to get an access token:\n\n```js\nparser.finishOAuth().then(function (data) {\n  // retrieve access token if you need it for other things\n  console.log('access token', data.user.access_token);\n\n  // redirect to the original url before oauth flow started\n  const url = new URL(data.then);\n  history.push(url.pathname);\n});\n```\n\nTo logout, call the below function:\n\n```js\nparser.logout();\n```\n\n* Documentation - See the `docs/` directory.\n* Testing - Run `yarn run test`.\n",
+    "longname": "/home/dmartin/work/openshift-resource-parser/README.md",
     "name": "./README.md",
     "static": true,
     "access": "public"
   },
   {
     "kind": "packageJSON",
-    "content": "{\n  \"name\": \"openshift-resource-parser\",\n  \"version\": \"1.0.0\",\n  \"description\": \"OpenShift resource CRUDL and parser\",\n  \"main\": \"./src/main.js\",\n  \"scripts\": {\n    \"test\": \"./node_modules/jest/bin/jest.js\",\n    \"lint\": \"./node_modules/.bin/eslint src/**\",\n    \"docs\": \"./node_modules/.bin/esdoc\"\n  },\n  \"jest\": {\n    \"automock\": false,\n    \"setupFiles\": [\n      \"./test/setup-jest.js\"\n    ]\n  },\n  \"keywords\": [\n    \"integreatly\",\n    \"openshift\"\n  ],\n  \"author\": \"Red Hat\",\n  \"license\": \"Apache-2.0\",\n  \"devDependencies\": {\n    \"babel-core\": \"^6.26.3\",\n    \"babel-jest\": \"^23.4.2\",\n    \"babel-plugin-transform-runtime\": \"^6.23.0\",\n    \"babel-preset-env\": \"^1.7.0\",\n    \"esdoc\": \"^1.1.0\",\n    \"esdoc-standard-plugin\": \"^1.0.0\",\n    \"eslint\": \"^5.4.0\",\n    \"eslint-config-airbnb-base\": \"^13.1.0\",\n    \"eslint-plugin-import\": \"^2.14.0\",\n    \"jest\": \"^23.5.0\",\n    \"jest-fetch-mock\": \"^1.6.5\"\n  }\n}\n",
-    "longname": "/Users/aidenkeating/work/openshift-resource-parser/package.json",
+    "content": "{\n  \"name\": \"openshift-resource-parser\",\n  \"version\": \"0.1.0\",\n  \"description\": \"OpenShift resource CRUDL and parser\",\n  \"main\": \"./src/main.js\",\n  \"scripts\": {\n    \"test\": \"./node_modules/jest/bin/jest.js\",\n    \"lint\": \"./node_modules/.bin/eslint src/**\",\n    \"lint:fix\": \"./node_modules/.bin/eslint src/** --fix\",\n    \"docs\": \"./node_modules/.bin/esdoc\"\n  },\n  \"jest\": {\n    \"automock\": false,\n    \"setupFiles\": [\n      \"./test/setup-jest.js\"\n    ]\n  },\n  \"keywords\": [\n    \"integreatly\",\n    \"openshift\"\n  ],\n  \"author\": \"\",\n  \"license\": \"Apache-2.0\",\n  \"devDependencies\": {\n    \"babel-core\": \"^6.26.3\",\n    \"babel-jest\": \"^23.4.2\",\n    \"babel-plugin-transform-runtime\": \"^6.23.0\",\n    \"babel-preset-env\": \"^1.7.0\",\n    \"esdoc\": \"^1.1.0\",\n    \"esdoc-standard-plugin\": \"^1.0.0\",\n    \"eslint\": \"^5.4.0\",\n    \"eslint-config-airbnb-base\": \"^13.1.0\",\n    \"eslint-plugin-import\": \"^2.14.0\",\n    \"jest\": \"^23.5.0\",\n    \"jest-fetch-mock\": \"^1.6.5\"\n  },\n  \"dependencies\": {\n    \"client-oauth2\": \"^4.2.1\"\n  }\n}\n",
+    "longname": "/home/dmartin/work/openshift-resource-parser/package.json",
     "name": "package.json",
     "static": true,
     "access": "public"
