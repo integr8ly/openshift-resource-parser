@@ -11,8 +11,9 @@ export default class ProvisionedServiceClient {
    * @constructor
    * @param {string} openshiftURL
    */
-  constructor(openshiftURL) {
+  constructor(openshiftURL, unauthorizedHandler) {
     this.openshiftURL = openshiftURL;
+    this.unauthorizedHandler = unauthorizedHandler;
   }
 
   /**
@@ -44,8 +45,8 @@ export default class ProvisionedServiceClient {
    */
   listProvisionedServices(authToken, namespace) {
     return Promise.all([
-      ProvisionedServiceClient.listClusterServiceClasses(this.openshiftURL, authToken),
-      ProvisionedServiceClient.listServiceInstances(this.openshiftURL, authToken, namespace)])
+      this.listClusterServiceClasses(this.openshiftURL, authToken),
+      this.listServiceInstances(this.openshiftURL, authToken, namespace)])
       .then(([clusterServiceClasses, serviceInstances]) => {
         if (!serviceInstances || (serviceInstances.length === 0)) {
           return [];
@@ -57,6 +58,19 @@ export default class ProvisionedServiceClient {
       });
   }
 
+  responseHandler(response) {
+    if (response.ok) {
+      return response.json();
+    } else if (response.status === 401) {
+      this.unauthorizedHandler();
+      return;
+    } else {
+      var error = new Error(response.statusText)
+      error.response = response
+      throw error
+    }
+  }
+
   /**
    * Retrieve a list of {@link ServiceInstance} from a namespace in OpenShift.
    * @private
@@ -65,7 +79,7 @@ export default class ProvisionedServiceClient {
    * @param {string} namespace The namespace to list the service instances from.
    * @returns {Promise<ServiceInstance[]>}
    */
-  static listServiceInstances(openshiftURL, authToken, namespace) {
+  listServiceInstances(openshiftURL, authToken, namespace) {
     if (!authToken) {
       return Promise.reject(new Error("Auth token should not be null"));
     }
@@ -73,8 +87,8 @@ export default class ProvisionedServiceClient {
     const headers = new Headers({
       Authorization: `Bearer ${authToken}`,
     });
-    return fetch(ProvisionedServiceClient.buildServiceInstanceListRoute(openshiftURL, namespace), { headers })
-      .then(response => response.json())
+    return fetch(this.buildServiceInstanceListRoute(openshiftURL, namespace), { headers })
+      .then(this.responseHandler.bind(this))
       .then(jsonData => jsonData.items.map(serviceInstanceJSON => ServiceInstance.fromJSON(serviceInstanceJSON)));
   }
 
@@ -85,7 +99,7 @@ export default class ProvisionedServiceClient {
    * @param {string} authToken An auth token for a user.
    * @returns {Promise<ClusterServiceClass[]>}
    */
-  static listClusterServiceClasses(openshiftURL, authToken) {
+  listClusterServiceClasses(openshiftURL, authToken) {
     if (!authToken) {
       return Promise.reject(new Error("Auth token should not be null"));
     }
@@ -93,8 +107,8 @@ export default class ProvisionedServiceClient {
     const headers = new Headers({
       Authorization: `Bearer ${authToken}`,
     });
-    return fetch(ProvisionedServiceClient.buildClusterServiceClassListRoute(openshiftURL), { headers })
-      .then(response => response.json())
+    return fetch(this.buildClusterServiceClassListRoute(openshiftURL), { headers })
+      .then(this.responseHandler.bind(this))
       .then(jsonData => jsonData.items.filter(serviceClassJSON => ClusterServiceClass.isValidJSON(serviceClassJSON)))
       .then(jsonData => jsonData.map(serviceClassJSON => ClusterServiceClass.fromJSON(serviceClassJSON)));
   }
@@ -105,7 +119,7 @@ export default class ProvisionedServiceClient {
    * @param {string} openshiftURL The URL of OpenShift
    * @param {string} namespace The namespace to retrieve the service instances from
    */
-  static buildServiceInstanceListRoute(openshiftURL, namespace) {
+  buildServiceInstanceListRoute(openshiftURL, namespace) {
     return `${openshiftURL}/apis/servicecatalog.k8s.io/v1beta1/namespaces/${namespace}/serviceinstances`;
   }
 
@@ -114,7 +128,7 @@ export default class ProvisionedServiceClient {
    * @private
    * @param {string} openshiftURL The URL of OpenShift
    */
-  static buildClusterServiceClassListRoute(openshiftURL) {
+  buildClusterServiceClassListRoute(openshiftURL) {
     return `${openshiftURL}/apis/servicecatalog.k8s.io/v1beta1/clusterserviceclasses`;
   }
 }

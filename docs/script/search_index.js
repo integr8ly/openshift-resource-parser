@@ -324,9 +324,9 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
-    "src/clients/mock-provisioned-service-client.js~mockprovisionedserviceclient._randomidentifier",
-    "class/src/clients/mock-provisioned-service-client.js~MockProvisionedServiceClient.html#static-method-_randomIdentifier",
-    "src/clients/mock-provisioned-service-client.js~MockProvisionedServiceClient._randomIdentifier",
+    "src/clients/mock-provisioned-service-client.js~mockprovisionedserviceclient.buildmockprovisionedservice",
+    "class/src/clients/mock-provisioned-service-client.js~MockProvisionedServiceClient.html#static-method-buildMockProvisionedService",
+    "src/clients/mock-provisioned-service-client.js~MockProvisionedServiceClient.buildMockProvisionedService",
     "method"
   ],
   [
@@ -342,21 +342,27 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
+    "src/clients/mock-provisioned-service-client.js~mockprovisionedserviceclient.randomidentifier",
+    "class/src/clients/mock-provisioned-service-client.js~MockProvisionedServiceClient.html#static-method-randomIdentifier",
+    "src/clients/mock-provisioned-service-client.js~MockProvisionedServiceClient.randomIdentifier",
+    "method"
+  ],
+  [
     "src/clients/provisioned-service-client.js",
     "file/src/clients/provisioned-service-client.js.html",
     "src/clients/provisioned-service-client.js",
     "file"
   ],
   [
-    "src/clients/provisioned-service-client.js~provisionedserviceclient#_listclusterserviceclasses",
-    "class/src/clients/provisioned-service-client.js~ProvisionedServiceClient.html#instance-method-_listClusterServiceClasses",
-    "src/clients/provisioned-service-client.js~ProvisionedServiceClient#_listClusterServiceClasses",
+    "src/clients/provisioned-service-client.js~provisionedserviceclient#buildclusterserviceclasslistroute",
+    "class/src/clients/provisioned-service-client.js~ProvisionedServiceClient.html#instance-method-buildClusterServiceClassListRoute",
+    "src/clients/provisioned-service-client.js~ProvisionedServiceClient#buildClusterServiceClassListRoute",
     "method"
   ],
   [
-    "src/clients/provisioned-service-client.js~provisionedserviceclient#_listserviceinstances",
-    "class/src/clients/provisioned-service-client.js~ProvisionedServiceClient.html#instance-method-_listServiceInstances",
-    "src/clients/provisioned-service-client.js~ProvisionedServiceClient#_listServiceInstances",
+    "src/clients/provisioned-service-client.js~provisionedserviceclient#buildserviceinstancelistroute",
+    "class/src/clients/provisioned-service-client.js~ProvisionedServiceClient.html#instance-method-buildServiceInstanceListRoute",
+    "src/clients/provisioned-service-client.js~ProvisionedServiceClient#buildServiceInstanceListRoute",
     "method"
   ],
   [
@@ -372,9 +378,21 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
+    "src/clients/provisioned-service-client.js~provisionedserviceclient#listclusterserviceclasses",
+    "class/src/clients/provisioned-service-client.js~ProvisionedServiceClient.html#instance-method-listClusterServiceClasses",
+    "src/clients/provisioned-service-client.js~ProvisionedServiceClient#listClusterServiceClasses",
+    "method"
+  ],
+  [
     "src/clients/provisioned-service-client.js~provisionedserviceclient#listprovisionedservices",
     "class/src/clients/provisioned-service-client.js~ProvisionedServiceClient.html#instance-method-listProvisionedServices",
     "src/clients/provisioned-service-client.js~ProvisionedServiceClient#listProvisionedServices",
+    "method"
+  ],
+  [
+    "src/clients/provisioned-service-client.js~provisionedserviceclient#listserviceinstances",
+    "class/src/clients/provisioned-service-client.js~ProvisionedServiceClient.html#instance-method-listServiceInstances",
+    "src/clients/provisioned-service-client.js~ProvisionedServiceClient#listServiceInstances",
     "method"
   ],
   [
@@ -384,16 +402,16 @@ window.esdocSearchIndex = [
     "member"
   ],
   [
-    "src/clients/provisioned-service-client.js~provisionedserviceclient._buildclusterserviceclasslistroute",
-    "class/src/clients/provisioned-service-client.js~ProvisionedServiceClient.html#static-method-_buildClusterServiceClassListRoute",
-    "src/clients/provisioned-service-client.js~ProvisionedServiceClient._buildClusterServiceClassListRoute",
+    "src/clients/provisioned-service-client.js~provisionedserviceclient#responsehandler",
+    "class/src/clients/provisioned-service-client.js~ProvisionedServiceClient.html#instance-method-responseHandler",
+    "src/clients/provisioned-service-client.js~ProvisionedServiceClient#responseHandler",
     "method"
   ],
   [
-    "src/clients/provisioned-service-client.js~provisionedserviceclient._buildserviceinstancelistroute",
-    "class/src/clients/provisioned-service-client.js~ProvisionedServiceClient.html#static-method-_buildServiceInstanceListRoute",
-    "src/clients/provisioned-service-client.js~ProvisionedServiceClient._buildServiceInstanceListRoute",
-    "method"
+    "src/clients/provisioned-service-client.js~provisionedserviceclient#unauthorizedhandler",
+    "class/src/clients/provisioned-service-client.js~ProvisionedServiceClient.html#instance-member-unauthorizedHandler",
+    "src/clients/provisioned-service-client.js~ProvisionedServiceClient#unauthorizedHandler",
+    "member"
   ],
   [
     "src/main.js",
@@ -414,6 +432,24 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
+    "src/main.js~openshiftresourceparser#finishoauth",
+    "class/src/main.js~OpenShiftResourceParser.html#instance-method-finishOAuth",
+    "src/main.js~OpenShiftResourceParser#finishOAuth",
+    "method"
+  ],
+  [
+    "src/main.js~openshiftresourceparser#getoauthclient",
+    "class/src/main.js~OpenShiftResourceParser.html#instance-method-getOauthClient",
+    "src/main.js~OpenShiftResourceParser#getOauthClient",
+    "method"
+  ],
+  [
+    "src/main.js~openshiftresourceparser#getparameterbyname",
+    "class/src/main.js~OpenShiftResourceParser.html#instance-method-getParameterByName",
+    "src/main.js~OpenShiftResourceParser#getParameterByName",
+    "method"
+  ],
+  [
     "src/main.js~openshiftresourceparser#getprovisionedmwservice",
     "class/src/main.js~OpenShiftResourceParser.html#instance-method-getProvisionedMWService",
     "src/main.js~OpenShiftResourceParser#getProvisionedMWService",
@@ -426,10 +462,34 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
+    "src/main.js~openshiftresourceparser#logout",
+    "class/src/main.js~OpenShiftResourceParser.html#instance-method-logout",
+    "src/main.js~OpenShiftResourceParser#logout",
+    "method"
+  ],
+  [
     "src/main.js~openshiftresourceparser#provisionedserviceclient",
     "class/src/main.js~OpenShiftResourceParser.html#instance-member-provisionedServiceClient",
     "src/main.js~OpenShiftResourceParser#provisionedServiceClient",
     "member"
+  ],
+  [
+    "src/main.js~openshiftresourceparser#setuser",
+    "class/src/main.js~OpenShiftResourceParser.html#instance-method-setUser",
+    "src/main.js~OpenShiftResourceParser#setUser",
+    "method"
+  ],
+  [
+    "src/main.js~openshiftresourceparser#startoauth",
+    "class/src/main.js~OpenShiftResourceParser.html#instance-method-startOAuth",
+    "src/main.js~OpenShiftResourceParser#startOAuth",
+    "method"
+  ],
+  [
+    "src/main.js~openshiftresourceparser#withuser",
+    "class/src/main.js~OpenShiftResourceParser.html#instance-method-withUser",
+    "src/main.js~OpenShiftResourceParser#withUser",
+    "method"
   ],
   [
     "src/types/cluster-service-class.js",

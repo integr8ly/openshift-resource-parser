@@ -48,19 +48,29 @@
 export default class MockProvisionedServiceClient {
   /**
    * Retrieve a {@link ProvisionedService} from a namespace, by name.
-   * @returns {ProvisionedService}
+   * @returns {Promise&lt;ProvisionedService&gt;}
    */
   static getProvisionedService() {
-    const identifier = MockProvisionedServiceClient._randomIdentifier();
-    return new ProvisionedService(`mock-service-${identifier}`, `https://mock-service-${identifier}.com/`, `mock-service-${identifier}-name`);
+    return Promise.resolve(this.buildMockProvisionedService());
   }
 
   /**
    * Retrieve a randomly named {@link ProvisionedService}
-   * @returns {ProvisionedService[]}
+   * @returns {Promise&lt;ProvisionedService[]&gt;}
    */
   static listProvisionedServices() {
-    return [this.getProvisionedService(), this.getProvisionedService(), this.getProvisionedService];
+    return Promise.resolve([this.buildMockProvisionedService(), this.buildMockProvisionedService(), this.buildMockProvisionedService()]);
+  }
+
+  /**
+   * Create a mock provisioned service.
+   * @private
+   * @returns {ProvisionedService}
+   */
+  static buildMockProvisionedService() {
+    const identifier = MockProvisionedServiceClient.randomIdentifier();
+    return new ProvisionedService(`mock-service-${identifier}`,
+      `https://mock-service-${identifier}.com/`, `mock-service-${identifier}-name`);
   }
 
   /**
@@ -68,7 +78,7 @@ export default class MockProvisionedServiceClient {
    * @private
    * @returns {number}
    */
-  static _randomIdentifier() {
+  static randomIdentifier() {
     return Math.floor(Math.random() * (9999 - 1000 + 1)) + 1000;
   }
 }

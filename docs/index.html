@@ -39,7 +39,47 @@
 </div>
 </nav>
 
-<div class="content" data-ice="content"><div data-ice="index" class="github-markdown"><h1 id="openshift-resource-parser">OpenShift Resource Parser</h1><p>A library for retrieving and parsing various OpenShift resources.</p>
+<div class="content" data-ice="content"><div data-ice="index" class="github-markdown"><h1 id="openshift-resource-parser">OpenShift Resource Parser</h1><p>A library for retrieving and parsing various OpenShift resources.
+You will need to set configuration when creating a new instance.</p>
+<pre><code><code class="source-code prettyprint">const config = {
+  mockData: &lt;enable_mock_data&gt;
+  clientId: &apos;&lt;openshift_oauthclient_id&gt;&apos;,
+  accessTokenUri: &apos;&lt;openshift_access_token_uri&gt;&apos;,
+  authorizationUri: &apos;&lt;openshift_authorize_uri&gt;&apos;,
+  redirectUri: &apos;&lt;openshift_redirect_uri&gt;&apos;,
+  scopes: [&lt;user scopes&gt;],
+  masterUri: &apos;&lt;openshift_master_uri&gt;&apos;
+};</code>
+</code></pre><p>For example, with a local openshift cluster:</p>
+<pre><code class="lang-js"><code class="source-code prettyprint">const config = {
+  clientId: &apos;my-app&apos;,
+  accessTokenUri: &apos;https://localhost:8443/oauth/token&apos;,
+  authorizationUri: &apos;https://localhost:8443/oauth/authorize&apos;,
+  redirectUri: &apos;http://myapp.example.com/oauth/callback&apos;,
+  scopes: [&apos;user:full&apos;],
+  masterUri: &apos;https://localhost:8443&apos;
+};
+
+const parser = new OpenShiftResourceParser(config);</code>
+</code></pre>
+<p>When you attempt to use the library, and a user has not authorized yet, the OAuth flow will start automatically.
+However, if you want to <em>manually</em> start the OAuth flow, you can call the following:</p>
+<pre><code class="lang-js"><code class="source-code prettyprint">parser.startOAuth()</code>
+</code></pre>
+<p>You will need to add an oauth callback route (e.g. <code>/oauth/callback</code>) to your App.
+This route should call the below code to finish the oauth flow to get an access token:</p>
+<pre><code class="lang-js"><code class="source-code prettyprint">parser.finishOAuth().then(function (data) {
+  // retrieve access token if you need it for other things
+  console.log(&apos;access token&apos;, data.user.access_token);
+
+  // redirect to the original url before oauth flow started
+  const url = new URL(data.then);
+  history.push(url.pathname);
+});</code>
+</code></pre>
+<p>To logout, call the below function:</p>
+<pre><code class="lang-js"><code class="source-code prettyprint">parser.logout();</code>
+</code></pre>
 <ul>
 <li>Documentation - See the <code>docs/</code> directory.</li>
 <li>Testing - Run <code>yarn run test</code>.</li>
